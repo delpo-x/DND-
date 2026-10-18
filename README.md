@@ -1,13 +1,13 @@
 # D&D Campaign Studio
 
-Applicazione web **locale e offline** per preparare e gestire campagne di D&D 5e/2024: narrativa, PNG, luoghi, fazioni, missioni con indizi verificabili, dungeon, regole SRD e un **controllo di coerenza narrativa** e un tracker di combattimento. Nessun account, nessun cloud, nessuna API a pagamento, nessuna dipendenza npm.
+Applicazione web locale e offline per preparare e gestire campagne di D&D 5e/2024. Tiene insieme trama, PNG, luoghi, fazioni, missioni con indizi, dungeon e regole SRD, controlla la coerenza della narrativa e include un tracker di combattimento. Funziona senza account, cloud, API a pagamento o dipendenze npm.
 
 > Progetto non ufficiale, non affiliato né approvato da Wizards of the Coast. Usa materiale del SRD 5.2 (CC BY 4.0): vedi [docs/LICENZE.md](docs/LICENZE.md).
 
 ## Requisiti
 
 - Windows 10/11
-- Node.js **22.13 o superiore** (testato con 24.19). Installazione: <https://nodejs.org> oppure `winget install OpenJS.NodeJS.LTS`
+- Node.js 22.13 o superiore (testato con 24.19), da <https://nodejs.org> o con `winget install OpenJS.NodeJS.LTS`
 - (Facoltativo) [Ollama](https://ollama.com) per la riscrittura di singoli campi di testo con un modello locale
 
 ## Avvio rapido
@@ -19,43 +19,42 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1   # verifica ambi
 powershell -ExecutionPolicy Bypass -File .\scripts\start.ps1     # avvia e apre http://127.0.0.1:4173/
 ```
 
-`-ExecutionPolicy Bypass` vale solo per quel processo: non modifica alcuna policy di sistema. In alternativa, senza script: `node src/server.js`.
-
-In alternativa, doppio clic su `Avvia.bat`. Opzioni utili: `start.ps1 -Port 4200`, `-DataDir D:\dati-dnd`, `-NoBrowser`. Il server ascolta **solo su 127.0.0.1**.
+`-ExecutionPolicy Bypass` vale solo per quel processo e non cambia le policy di sistema. Puoi anche avviare il server direttamente con `node src/server.js`, oppure con un doppio clic su `Avvia.bat`. Opzioni di `start.ps1`: `-Port 4200`, `-DataDir D:\dati-dnd`, `-NoBrowser`. Il server ascolta solo su 127.0.0.1.
 
 ## Primo utilizzo
 
-1. Dalla *Home* scegli **＋ Nuova campagna**: nella finestra puoi creare una campagna vuota oppure generarne una completa (seed, tono, pericolo, giocatori, livelli, sessioni). **Importa da file JSON…** carica un'esportazione o la campagna di esempio.
-2. La generazione deterministica crea una campagna completa: regione, luoghi, 6 PNG con motivazioni e segreti, 3 fazioni, 6 missioni (3 principali + 3 secondarie), indizi (di cui una falsa pista), un mistero, eventi, oggetti, sessioni e 2 dungeon. Con lo stesso seed il risultato è identico.
-3. Apri **Coerenza narrativa** per vedere errori, rischi e suggerimenti, ognuno con gli elementi coinvolti e una correzione proposta.
-4. Modifica tutto dalle sezioni del menu laterale (Mondo e luoghi, Missioni, PNG, Fazioni, Indizi, Misteri, Oggetti, Eventi e cronologia, Sessioni, Dungeon). I campi collegati si scelgono da menu: i riferimenti sono sempre validati.
-5. **Relazioni** mostra il grafo dei collegamenti; **Cronologia modifiche** ogni modifica con possibilità di ripristino della versione precedente.
-6. **Esporta, stampa, backup** offre JSON, Markdown e HTML stampabile (anteprima di stampa dal browser) e crea/ripristina copie verificate. **Regole e incontri** cerca nel database creature SRD e genera incontri entro il budget di PE. **Tracker di combattimento** tiene iniziativa, PF, turni e condizioni durante la sessione (stato salvato e incluso in export/backup). **Al tavolo** riunisce in una pagina la sessione da giocare (scene, PNG, indizi, eventi, tracker compatto) con scheda stampabile.
+1. Dalla Home scegli "Nuova campagna". Puoi crearne una vuota o generarne una completa, indicando seed, tono, pericolo, giocatori, livelli, sessioni e struttura narrativa (classica, indagine, sandbox, esplorazione). "Importa da file JSON" carica un'esportazione o la campagna di esempio.
+2. La generazione deterministica produce regione, luoghi, 6 PNG con motivazioni e segreti, 3 fazioni, 6 missioni (3 principali e 3 secondarie), indizi (uno è una falsa pista), un mistero, eventi, oggetti, sessioni e 2 dungeon. Con lo stesso seed il risultato è identico.
+3. "Coerenza narrativa" elenca errori, rischi e suggerimenti, ciascuno con gli elementi coinvolti e una correzione proposta.
+4. Il menu laterale apre le sezioni da modificare: Mondo e luoghi, Missioni, PNG, Fazioni, Indizi, Misteri, Oggetti, Eventi e cronologia, Sessioni, Dungeon. I campi collegati si scelgono da un menu, quindi i riferimenti sono sempre validi.
+5. "Relazioni" mostra il grafo dei collegamenti. "Cronologia modifiche" elenca ogni modifica e permette di tornare alla versione precedente.
+6. "Esporta, stampa, backup" produce JSON, Markdown e HTML stampabile, e crea o ripristina copie verificate. "Regole e incontri" cerca nel database delle creature SRD e genera incontri entro il budget di PE. Il tracker di combattimento tiene iniziativa, PF, turni e condizioni, e il suo stato finisce in esportazioni e backup.
+7. "Al tavolo" riunisce in una pagina la sessione da giocare: scene, PNG, indizi, eventi e un tracker compatto. Da lì si stampa anche la scheda della sessione.
 
 ## Dati e sicurezza dei dati
 
-- Database SQLite in `storage\studio.sqlite`; backup in `storage\backups\`. Per salvare tutto basta copiare `storage\`.
-- Ogni modifica crea una versione (storico). Le eliminazioni vanno prima nel **cestino** e sono bloccate se altri elementi dipendono dall'elemento.
-- Eliminazione definitiva di un elemento o di una campagna: richiede di digitare il nome esatto e crea **prima** un backup automatico.
-- I backup sono riletti e verificati (checksum SHA-256) subito dopo la scrittura; un file manomesso o corrotto viene rifiutato senza toccare i dati. Il ripristino crea prima un backup dello stato attuale.
-- Se un generatore fallisce non viene salvato nulla di parziale (operazioni atomiche).
+- Il database SQLite sta in `storage\studio.sqlite` e i backup in `storage\backups\`. Per salvare tutto basta copiare `storage\`.
+- Ogni modifica crea una versione nello storico. Le eliminazioni passano dal cestino e sono bloccate se altri elementi dipendono da quello da eliminare.
+- Per eliminare per sempre un elemento o una campagna devi digitare il nome esatto, e prima l'app crea un backup.
+- Dopo la scrittura ogni backup viene riletto e controllato con checksum SHA-256. Un file manomesso o corrotto viene rifiutato senza toccare i dati, e il ripristino salva prima lo stato attuale.
+- Le operazioni sono atomiche: se un generatore fallisce, non resta nulla di parziale.
 
 ## Modalità IA
 
 | Modalità | Cosa fa | Requisiti |
 |---|---|---|
-| **Deterministica** (predefinita) | Genera campagne, PNG, eventi, luoghi, dungeon e rigenera alcuni campi (nomi, personalità, premesse…) da seed. Sempre disponibile, offline, riproducibile. | nessuno |
-| **Ollama** (facoltativa) | Riscrive un singolo campo di testo di un elemento con un modello locale. Non crea né cambia entità, relazioni o stato. | Ollama in esecuzione + un modello |
+| Deterministica (predefinita) | Genera campagne, PNG, eventi, luoghi, dungeon e rigenera alcuni campi (nomi, personalità, premesse…) da seed. Sempre disponibile, offline, riproducibile. | nessuno |
+| Ollama (facoltativa) | Riscrive un singolo campo di testo di un elemento con un modello locale. Non crea né cambia entità, relazioni o stato. | Ollama in esecuzione + un modello |
 
-L'indicatore in alto mostra se la modalità scelta è disponibile. Con Ollama gestiti: servizio spento, modello mancante, timeout, risposta incompleta/troncata/vuota; in ogni caso **il dato esistente resta intatto**. Sono ammessi solo indirizzi locali (`ALLOW_REMOTE_OLLAMA=1` per cambiare). Limiti di memoria configurabili (`numCtx`, `numPredict`).
+L'indicatore in alto dice se la modalità scelta è disponibile. Se Ollama è spento, manca il modello, scade il tempo o la risposta arriva incompleta, troncata o vuota, l'app lo segnala e il dato esistente resta com'era. Sono ammessi solo indirizzi locali (`ALLOW_REMOTE_OLLAMA=1` per cambiare). I limiti di memoria si regolano con `numCtx` e `numPredict`.
 
-Installare Ollama e un modello piccolo (facoltativo, con controllo di spazio e conferma):
+Per installare Ollama e un modello piccolo (facoltativo) lo script controlla lo spazio e chiede conferma prima di scaricare:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -InstallOllama -PullModel qwen2.5:3b
 ```
 
-Nulla viene scaricato senza conferma. Poi clicca l'indicatore **IA** in alto per aprire le impostazioni e scegli *Ollama*.
+Poi clicca l'indicatore "IA" in alto, apri le impostazioni e scegli Ollama.
 
 ## Test
 
@@ -71,9 +70,9 @@ La cartella [examples/](examples) contiene una campagna di esempio (`campagna-es
 
 ## Documentazione
 
-- [docs/ARCHITETTURA.md](docs/ARCHITETTURA.md) — struttura, schema dati, scelte tecniche
-- [docs/FUNZIONI.md](docs/FUNZIONI.md) — funzioni implementate, limiti, prossimi passi, risultati dei test
-- [docs/LICENZE.md](docs/LICENZE.md) — registro dipendenze/licenze e audit dei tre repository di riferimento
+- [docs/ARCHITETTURA.md](docs/ARCHITETTURA.md): struttura, schema dati, scelte tecniche
+- [docs/FUNZIONI.md](docs/FUNZIONI.md): funzioni implementate, limiti, prossimi passi, risultati dei test
+- [docs/LICENZE.md](docs/LICENZE.md): registro di dipendenze e licenze, audit dei tre repository di riferimento
 
 ## Problemi comuni
 

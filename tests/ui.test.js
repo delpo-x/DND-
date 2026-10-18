@@ -479,3 +479,17 @@ test("UI: nuova campagna con struttura narrativa scelta (indagine a nodi)", { sk
   assert.ok(clues.includes("La leggenda degli anziani"), JSON.stringify(clues));
   assert.deepEqual(problems, [], "problemi JS/console: " + problems.join(" | "));
 });
+
+test("UI: accessibilità — link al contenuto, dialogo con titolo associato e focus che torna al pulsante, Esc chiude", { skip }, async () => {
+  assert.ok(await ev(`!!document.querySelector('a.skip-link[href="#main"]') && document.getElementById('main').tabIndex === -1`));
+  await ev(`location.hash = '#/'`);
+  await waitFor(`[...document.querySelectorAll('button')].some(b => b.textContent.includes('Nuova campagna'))`, "home");
+  await ev(`[...document.querySelectorAll('button')].find(b => b.textContent.includes('Nuova campagna')).focus()`);
+  assert.ok(await clickText("button", "Nuova campagna"));
+  await waitFor(`document.querySelector('.modal')`, "dialogo");
+  const ok = await ev(`(() => { const m = document.querySelector('.modal'); const id = m.getAttribute('aria-labelledby'); return m.getAttribute('role') === 'dialog' && !!id && document.getElementById(id)?.tagName === 'H2'; })()`);
+  assert.equal(ok, true, "dialogo senza titolo associato");
+  await ev(`document.querySelector('.modal-bg').dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }))`);
+  await waitFor(`!document.querySelector('.modal')`, "chiusura con Esc");
+  assert.equal(await ev(`document.activeElement.textContent.includes('Nuova campagna')`), true, "il focus non è tornato al pulsante");
+});

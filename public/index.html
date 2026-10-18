@@ -8,14 +8,15 @@
 <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<a href="#main" class="skip-link" onclick="event.preventDefault();document.getElementById('main').focus()">Vai al contenuto</a>
 <header id="topbar">
-  <a href="#/" class="brand">⚔ D&amp;D Campaign Studio</a>
-  <nav id="campaign-title"></nav>
-  <button id="ai-badge" class="badge" title="Stato della generazione IA locale — clic per le impostazioni">IA: …</button>
+  <a href="#/" class="brand"><span aria-hidden="true">⚔</span> D&amp;D Campaign Studio</a>
+  <nav id="campaign-title" aria-label="Campagna corrente"></nav>
+  <button id="ai-badge" class="badge" title="Stato della generazione IA locale: clic per le impostazioni">IA: …</button>
 </header>
 <div id="layout">
-  <aside id="sidebar" hidden></aside>
-  <main id="main"><p>Caricamento…</p></main>
+  <aside id="sidebar" aria-label="Sezioni della campagna" hidden></aside>
+  <main id="main" tabindex="-1"><p>Caricamento…</p></main>
 </div>
 <div id="toasts" aria-live="polite"></div>
 <div id="modal-root"></div>

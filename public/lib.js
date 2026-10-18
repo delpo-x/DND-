@@ -54,7 +54,9 @@ export const fail = (e) => { console.error(e); toast(e.message ?? String(e), "er
 export function modal(title, content, buttons, { guard } = {}) {
   return new Promise((resolve) => {
     const root = document.getElementById("modal-root");
-    const close = (v) => { bg.remove(); resolve(v); };
+    const opener = document.activeElement;
+    const titleId = "modal-title-" + Math.random().toString(36).slice(2, 8);
+    const close = (v) => { bg.remove(); if (opener?.isConnected) opener.focus?.(); resolve(v); };
     const cancel = async (v) => {
       if (guard?.() && !(await confirmDialog("Dati non salvati", "Chiudendo la finestra i dati inseriti andranno persi. Continuare?", "Chiudi senza salvare", true))) return;
       close(v);
@@ -65,7 +67,15 @@ export function modal(title, content, buttons, { guard } = {}) {
       if (b.onclick) { const keep = await b.onclick(); if (keep === false) return; }
       close(b.value);
     } }, b.label)));
-    const bg = h("div", { class: "modal-bg", onkeydown: (e) => { if (e.key === "Escape" && e.target.closest(".modal-bg") === bg) { e.stopPropagation(); cancel(undefined); } } }, h("div", { class: "modal", role: "dialog", "aria-modal": "true" }, h("h2", {}, title), content, actions));
+    const trapTab = (e) => {
+      if (e.key !== "Tab" || e.target.closest(".modal-bg") !== bg) return;
+      const items = [...bg.querySelectorAll("input,select,textarea,button,a[href],summary,[tabindex]:not([tabindex='-1'])")].filter((n) => !n.disabled && n.offsetParent !== null);
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    const bg = h("div", { class: "modal-bg", onkeydown: (e) => { trapTab(e); if (e.key === "Escape" && e.target.closest(".modal-bg") === bg) { e.stopPropagation(); cancel(undefined); } } }, h("div", { class: "modal", role: "dialog", "aria-modal": "true", "aria-labelledby": titleId }, h("h2", { id: titleId }, title), content, actions));
     root.append(bg);
     bg.querySelector("input,select,textarea,button")?.focus();
   });
