@@ -1,0 +1,14 @@
+{
+  "name": "dnd-campaign-studio",
+  "version": "0.1.0",
+  "description": "D&D Campaign Studio - gestore di campagne D&D 5e/2024 locale, offline, senza dipendenze npm",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "seed-example": "node tools/make-examples.js"
+  }
+}

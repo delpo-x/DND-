@@ -1,0 +1,2267 @@
+{
+  "format": "dnd-campaign-studio/campaign",
+  "formatVersion": 1,
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-17T20:15:47.580Z",
+  "checksum": "ecf775a98749ea70495fdb102da027b7e5e67a9ee691388fcd7775e97e2f7d61",
+  "campaign": {
+    "id": "camp_08a685e63d",
+    "archived": false,
+    "title": "L'ombra della Fiamma Pallida",
+    "setting": "Il Contado dei Tre Fiumi: L'oscurità ha una volontà propria e le notti sono sempre più lunghe.",
+    "tone": "orrore gotico",
+    "danger": "medio",
+    "players": 4,
+    "startLevel": 1,
+    "endLevel": 5,
+    "sessions": 8,
+    "premise": "Ignazio Bosconero, Gran Priore di Monteluce, nasconde un segreto: vuole risvegliare un'entità sepolta, nella convinzione che solo così potrà guarire da un male incurabile. Il gruppo viene coinvolto quando le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere.",
+    "centralConflict": "Un culto nascosto raccoglie offerte umane per risvegliare un'entità sepolta, mentre chi dovrebbe proteggere la regione ne è complice o è cieco.",
+    "worldState": "Giorno 1. Le porte restano sbarrate dopo il tramonto. Il Contado dei Tre Fiumi non è ancora al corrente di quanto sta per accadere; il Rito della Luna Cieca è previsto al giorno 32.",
+    "currentDay": 1,
+    "seed": "esempio-1",
+    "rulesVersion": "srd-5.2 (2024)"
+  },
+  "entities": [
+    {
+      "id": "clu_19dba39b1d",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Il simbolo nei registri",
+        "text": "Eldrin Cerchiotorto riconosce il simbolo trovato dopo la scomparsa di dodici pellegrini diretti alla cripta: compare in registri molto vecchi, collegato al Culto della Fiamma Pallida.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_59b9e3054c",
+        "foundInItem": null,
+        "check": "Indagare (CD 10)",
+        "requires": [],
+        "mystery": "mys_1324ebd3cf",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_7420b68fd5",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La testimonianza",
+        "text": "Orsino Corvonero rivela che, da quando le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere, un forestiero ben vestito ha visitato la Cripta dei Penitenti di notte, più di una volta.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_31f68987e5",
+        "foundInItem": null,
+        "check": "Intuizione o Persuasione (CD 12)",
+        "requires": [],
+        "mystery": "mys_1324ebd3cf",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_8e786e16f0",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "I finanziamenti",
+        "text": "Un registro firmato indica che i lavori alla Cripta dei Penitenti sono stati pagati da Ignazio Bosconero: la pista porta al vertice, non a Ermanno Valmora.",
+        "foundAtLocation": "loc_4844f9853b",
+        "foundWithNpc": null,
+        "foundInItem": "ite_f6ae00537b",
+        "check": "Indagare (CD 13)",
+        "requires": [
+          "clu_19dba39b1d"
+        ],
+        "mystery": "mys_1324ebd3cf",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_bedb18f5f8",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "L'oggetto del rivale",
+        "text": "Accanto a una delle vittime si trova un oggetto che appartiene a Ermanno Valmora: sembra indicarlo come colpevole.",
+        "foundAtLocation": "loc_8ba84babbc",
+        "foundWithNpc": null,
+        "foundInItem": null,
+        "check": "Indagare (CD 10)",
+        "requires": [],
+        "mystery": "mys_1324ebd3cf",
+        "truthful": false,
+        "debunkedBy": "clu_8e786e16f0"
+      }
+    },
+    {
+      "id": "clu_eadab61618",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Il diario e la mappa",
+        "text": "Nelle profondità della Cripta dei Penitenti un diario e una mappa rivelano il passaggio verso il Santuario Sommerso e lo scopo del Rito della Luna Cieca.",
+        "foundAtLocation": "loc_f709eb3290",
+        "foundWithNpc": null,
+        "foundInItem": "ite_4baaca3670",
+        "check": "Percezione o Indagare (CD 14)",
+        "requires": [
+          "clu_8e786e16f0"
+        ],
+        "mystery": "mys_1324ebd3cf",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "dun_61a2b8ee42",
+      "type": "dungeon",
+      "deleted": false,
+      "data": {
+        "name": "Santuario Sommerso",
+        "location": "loc_97e23aff6d",
+        "seed": "esempio-1:sanctum",
+        "partyLevel": 5,
+        "width": 48,
+        "height": 32,
+        "grid": [
+          "################################################",
+          "#################.........######################",
+          "#################.........########.......#######",
+          "#################.........########.......#######",
+          "#################.........+......+.......#######",
+          "#################.........########.......#######",
+          "#################.........########.......#######",
+          "#################.........###########++#########",
+          "###################+#################..#########",
+          "###################.#################++#########",
+          "###################.#############..........#####",
+          "###################.#############..........#####",
+          "###################.#############..........#####",
+          "#####.........#####.#############..........#####",
+          "#####.........#####.#############..........#####",
+          "#####.........#####.################+###########",
+          "#####.........#####.################.###########",
+          "#####.........#####.################.###########",
+          "#########+#########.################.###########",
+          "#########.#########+################.###########",
+          "#########.######.......#############.###########",
+          "#########.######.......#############.###########",
+          "#########......+.......#############+###########",
+          "################.......##########......#########",
+          "################.......##########......#########",
+          "#################################......#########",
+          "#################################......#########",
+          "################################################",
+          "################################################",
+          "################################################",
+          "################################################",
+          "################################################"
+        ],
+        "rooms": [
+          {
+            "id": "r1",
+            "name": "Ingresso",
+            "x": 5,
+            "y": 13,
+            "w": 9,
+            "h": 5,
+            "kind": "ingresso",
+            "description": "Tracce di fuliggine annerisce le pareti: qualcuno ha acceso fuochi qui, di recente.",
+            "environment": "Aria stantia: nessun effetto, ma le torce tremolano",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r2",
+            "name": "Cella dei Prigionieri",
+            "x": 16,
+            "y": 20,
+            "w": 7,
+            "h": 5,
+            "kind": "tesoro",
+            "description": "Umidità e silenzio; le pareti trasudano un odore di terra vecchia.",
+            "treasure": "Una pergamena sigillata e una pozione non identificata",
+            "environment": "Nebbia bassa: visibilità ridotta oltre 9 m",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r3",
+            "name": "Fucina Spenta",
+            "x": 17,
+            "y": 1,
+            "w": 9,
+            "h": 7,
+            "kind": "trappola",
+            "description": "Il soffitto a volta è sorretto da pilastri incrinati; la polvere conserva impronte recenti.",
+            "trap": "Gas soporifero da un'urna. Salvezza su Costituzione o addormentato 1 minuto (CD 15, 22 (4d10); trappola letale per i livelli 5-10 (scala SRD 5.2)).",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r4",
+            "name": "Sala del Custode",
+            "x": 33,
+            "y": 23,
+            "w": 6,
+            "h": 4,
+            "kind": "boss",
+            "description": "Umidità e silenzio; le pareti trasudano un odore di terra vecchia.",
+            "treasure": "Una pergamena sigillata e una pozione non identificata",
+            "encounter": {
+              "difficulty": "alta",
+              "budget": 4400,
+              "totalXp": 4350,
+              "level": 5,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_hezrou",
+                  "name": "Hezrou",
+                  "count": 1,
+                  "cr": "8",
+                  "xp": 3900,
+                  "ac": 18,
+                  "hp": 157,
+                  "type": "Fiend"
+                },
+                {
+                  "key": "srd-2024_ghast",
+                  "name": "Ghast",
+                  "count": 1,
+                  "cr": "2",
+                  "xp": 450,
+                  "ac": 13,
+                  "hp": 36,
+                  "type": "Undead"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": "eve_9df1d8607f",
+            "clues": []
+          },
+          {
+            "id": "r5",
+            "name": "Fucina Spenta",
+            "x": 33,
+            "y": 10,
+            "w": 10,
+            "h": 5,
+            "kind": "enigma",
+            "description": "Tracce di fuliggine annerisce le pareti: qualcuno ha acceso fuochi qui, di recente.",
+            "puzzle": "Quattro leve con simboli di stagioni. Soluzione: Vanno abbassate nell'ordine in cui le stagioni compaiono nel mosaico del soffitto.",
+            "environment": "Luce fioca: penombra",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r6",
+            "name": "Biblioteca Sommersa",
+            "x": 34,
+            "y": 2,
+            "w": 7,
+            "h": 5,
+            "kind": "trappola",
+            "description": "Tracce di fuliggine annerisce le pareti: qualcuno ha acceso fuochi qui, di recente.",
+            "trap": "Fossa nascosta sotto un tappeto. Salvezza su Destrezza o caduta nel fosso (CD 15, 22 (4d10); trappola letale per i livelli 5-10 (scala SRD 5.2)).",
+            "environment": "Silenzio innaturale: i suoni si attutiscono",
+            "event": null,
+            "clues": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "dun_b281e77282",
+      "type": "dungeon",
+      "deleted": false,
+      "data": {
+        "name": "Cripta dei Penitenti",
+        "location": "loc_f709eb3290",
+        "seed": "esempio-1:ruin",
+        "partyLevel": 3,
+        "width": 48,
+        "height": 32,
+        "grid": [
+          "################################################",
+          "####.....#######################################",
+          "####.....#######################################",
+          "####.....#################.....#################",
+          "####.....#################.....#################",
+          "####.....#################.....+......+......###",
+          "######+###################.....########......###",
+          "######.#####################+##########......###",
+          "######.#####################.##########......###",
+          "######.#####################.##########......###",
+          "######.#####################.##########......###",
+          "######.#####################.#############+#####",
+          "######.#####################.#############.#####",
+          "######.########.........####.#############.#####",
+          "######+########.........####.#############.#####",
+          "##.........+..+.........+....#############.#####",
+          "##.........####.........##################.#####",
+          "##.........########+######################.#####",
+          "##.........########.######################.#####",
+          "##.........########.######################.#####",
+          "######+############.######################.#####",
+          "######.############.######..........######.#####",
+          "######.############.######..........######+#####",
+          "######.############.######..........##.......###",
+          "######.############......+..........##.......###",
+          "######.......######.######..........##.......###",
+          "######.......######......+..........++.......###",
+          "######S......#############..........##.......###",
+          "#######......#########################.......###",
+          "################################################",
+          "################################################",
+          "################################################"
+        ],
+        "rooms": [
+          {
+            "id": "r1",
+            "name": "Ingresso",
+            "x": 2,
+            "y": 15,
+            "w": 9,
+            "h": 5,
+            "kind": "ingresso",
+            "description": "Il soffitto a volta è sorretto da pilastri incrinati; la polvere conserva impronte recenti.",
+            "environment": "Nebbia bassa: visibilità ridotta oltre 9 m",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r2",
+            "name": "Cella dei Prigionieri",
+            "x": 4,
+            "y": 1,
+            "w": 5,
+            "h": 5,
+            "kind": "tesoro",
+            "description": "Umidità e silenzio; le pareti trasudano un odore di terra vecchia.",
+            "treasure": "Lingotti anneriti e un anello di rame",
+            "event": "eve_880eabfe22",
+            "clues": [
+              "clu_eadab61618"
+            ]
+          },
+          {
+            "id": "r3",
+            "name": "Camera dei Sigilli",
+            "x": 7,
+            "y": 25,
+            "w": 6,
+            "h": 4,
+            "kind": "stanza",
+            "description": "Tracce di fuliggine annerisce le pareti: qualcuno ha acceso fuochi qui, di recente.",
+            "encounter": {
+              "difficulty": "moderata",
+              "budget": 900,
+              "totalXp": 900,
+              "level": 3,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_swarm-of-crawling-claws",
+                  "name": "Swarm of Crawling Claws",
+                  "count": 1,
+                  "cr": "3",
+                  "xp": 700,
+                  "ac": 12,
+                  "hp": 49,
+                  "type": "Undead"
+                },
+                {
+                  "key": "srd-2024_ghoul",
+                  "name": "Ghoul",
+                  "count": 1,
+                  "cr": "1",
+                  "xp": 200,
+                  "ac": 12,
+                  "hp": 22,
+                  "type": "Undead"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r4",
+            "name": "Cella dei Prigionieri",
+            "x": 15,
+            "y": 13,
+            "w": 9,
+            "h": 4,
+            "kind": "trappola",
+            "description": "Il soffitto a volta è sorretto da pilastri incrinati; la polvere conserva impronte recenti.",
+            "trap": "Dardi da fori nelle pareti. Tiro per colpire dei dardi o danni perforanti (CD 13, 11 (2d10); trappola letale per i livelli 1-4 (scala SRD 5.2)).",
+            "encounter": {
+              "difficulty": "moderata",
+              "budget": 900,
+              "totalXp": 900,
+              "level": 3,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_mummy",
+                  "name": "Mummy",
+                  "count": 1,
+                  "cr": "3",
+                  "xp": 700,
+                  "ac": 11,
+                  "hp": 58,
+                  "type": "Undead"
+                },
+                {
+                  "key": "srd-2024_ghoul",
+                  "name": "Ghoul",
+                  "count": 1,
+                  "cr": "1",
+                  "xp": 200,
+                  "ac": 12,
+                  "hp": 22,
+                  "type": "Undead"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r5",
+            "name": "Sala del Custode",
+            "x": 26,
+            "y": 21,
+            "w": 10,
+            "h": 7,
+            "kind": "boss",
+            "description": "Umidità e silenzio; le pareti trasudano un odore di terra vecchia.",
+            "treasure": "Una pergamena sigillata e una pozione non identificata",
+            "encounter": {
+              "difficulty": "alta",
+              "budget": 1600,
+              "totalXp": 1600,
+              "level": 3,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_incubus",
+                  "name": "Incubus",
+                  "count": 1,
+                  "cr": "4",
+                  "xp": 1100,
+                  "ac": 15,
+                  "hp": 66,
+                  "type": "Fiend"
+                },
+                {
+                  "key": "srd-2024_ghast",
+                  "name": "Ghast",
+                  "count": 1,
+                  "cr": "2",
+                  "xp": 450,
+                  "ac": 13,
+                  "hp": 36,
+                  "type": "Undead"
+                },
+                {
+                  "key": "srd-2024_dretch",
+                  "name": "Dretch",
+                  "count": 1,
+                  "cr": "1/4",
+                  "xp": 50,
+                  "ac": 11,
+                  "hp": 18,
+                  "type": "Fiend"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r6",
+            "name": "Fucina Spenta",
+            "x": 26,
+            "y": 3,
+            "w": 5,
+            "h": 4,
+            "kind": "enigma",
+            "description": "L'acqua gocciola in un catino di pietra al centro della sala.",
+            "puzzle": "Quattro leve con simboli di stagioni. Soluzione: Vanno abbassate nell'ordine in cui le stagioni compaiono nel mosaico del soffitto.",
+            "environment": "Luce fioca: penombra",
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r7",
+            "name": "Sala del Pozzo",
+            "x": 38,
+            "y": 23,
+            "w": 7,
+            "h": 6,
+            "kind": "stanza",
+            "description": "Tracce di fuliggine annerisce le pareti: qualcuno ha acceso fuochi qui, di recente.",
+            "encounter": {
+              "difficulty": "moderata",
+              "budget": 900,
+              "totalXp": 900,
+              "level": 3,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_nightmare",
+                  "name": "Nightmare",
+                  "count": 1,
+                  "cr": "3",
+                  "xp": 700,
+                  "ac": 13,
+                  "hp": 68,
+                  "type": "Fiend"
+                },
+                {
+                  "key": "srd-2024_ghoul",
+                  "name": "Ghoul",
+                  "count": 1,
+                  "cr": "1",
+                  "xp": 200,
+                  "ac": 12,
+                  "hp": 22,
+                  "type": "Undead"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": null,
+            "clues": []
+          },
+          {
+            "id": "r8",
+            "name": "Ossario",
+            "x": 39,
+            "y": 5,
+            "w": 6,
+            "h": 6,
+            "kind": "trappola",
+            "description": "Mobili marciti formano barricate improvvisate contro le porte.",
+            "trap": "Lastra a pressione con lame a scatto. Salvezza su Destrezza o danni da taglio (CD 13, 11 (2d10); trappola letale per i livelli 1-4 (scala SRD 5.2)).",
+            "environment": "Luce fioca: penombra",
+            "encounter": {
+              "difficulty": "moderata",
+              "budget": 900,
+              "totalXp": 900,
+              "level": 3,
+              "players": 4,
+              "creatures": [
+                {
+                  "key": "srd-2024_nightmare",
+                  "name": "Nightmare",
+                  "count": 1,
+                  "cr": "3",
+                  "xp": 700,
+                  "ac": 13,
+                  "hp": 68,
+                  "type": "Fiend"
+                },
+                {
+                  "key": "srd-2024_ghoul",
+                  "name": "Ghoul",
+                  "count": 1,
+                  "cr": "1",
+                  "xp": 200,
+                  "ac": 12,
+                  "hp": 22,
+                  "type": "Undead"
+                }
+              ],
+              "source": "SRD 5.2 (CC BY 4.0): creature e budget di PE per personaggio"
+            },
+            "event": null,
+            "clues": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "eve_3a4035a7b0",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Imboscata sulla strada",
+        "kind": "imprevisto",
+        "day": 8,
+        "description": "Predoni, o qualcuno che li ha pagati, attende i PG lungo la Brughiera Grigia: vogliono impedire che raggiungano le rovine.",
+        "location": "loc_e86b36dcbe",
+        "participants": [],
+        "requires": [],
+        "requiresKnowledge": [],
+        "trigger": "I PG viaggiano da Monteluce verso le rovine",
+        "happened": false,
+        "effects": [
+          {
+            "kind": "nota",
+            "target": null,
+            "value": "Incontro bilanciato per il gruppo (vedi generatore di incontri)",
+            "valueRef": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "eve_73b4229d30",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Il consiglio cittadino",
+        "kind": "previsto",
+        "day": 12,
+        "description": "Il consiglio si riunisce per decidere come rispondere ai segnali. Ignazio Bosconero propone di chiudere l'inchiesta.",
+        "location": "loc_0398a43576",
+        "participants": [
+          "npc_0d4ecdba53",
+          "npc_b9a28a3b57",
+          "npc_f12437f654"
+        ],
+        "requires": [
+          "eve_f24519168e"
+        ],
+        "requiresKnowledge": [
+          "clu_19dba39b1d"
+        ],
+        "happened": false,
+        "effects": [
+          {
+            "kind": "nota",
+            "target": null,
+            "value": "I PG possono intervenire solo se conoscono il simbolo (indizio 1)",
+            "valueRef": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "eve_8355d20991",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Il mercato straordinario",
+        "kind": "imprevisto",
+        "day": 6,
+        "description": "Un mercato straordinario affolla Monteluce: occasione per raccogliere voci, ma anche per essere osservati.",
+        "location": "loc_0398a43576",
+        "participants": [
+          "npc_f12437f654",
+          "npc_59b9e3054c"
+        ],
+        "requires": [],
+        "requiresKnowledge": [],
+        "trigger": "I PG si trovano in città durante il giorno 6",
+        "happened": false,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_880eabfe22",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Lavori notturni nel sito",
+        "kind": "storico",
+        "day": -40,
+        "description": "Ignazio Bosconero scopre la Cripta dei Penitenti e ne comprende lo scopo; da allora ha iniziato a finanziare i lavori in segreto.",
+        "location": "loc_f709eb3290",
+        "participants": [
+          "npc_b9a28a3b57",
+          "npc_0e0a8a9954"
+        ],
+        "requires": [],
+        "requiresKnowledge": [],
+        "happened": true,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_9df1d8607f",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Il Rito della Luna Cieca",
+        "kind": "previsto",
+        "day": 32,
+        "description": "Ignazio Bosconero compie il Rito della Luna Cieca usando il Calice di Cenere. Se nessuno lo ferma, le conseguenze ricadranno su tutta la regione.",
+        "location": "loc_97e23aff6d",
+        "participants": [
+          "npc_b9a28a3b57"
+        ],
+        "requires": [
+          "eve_73b4229d30"
+        ],
+        "requiresKnowledge": [],
+        "happened": false,
+        "effects": [
+          {
+            "kind": "nota",
+            "target": null,
+            "value": "Scadenza della campagna principale",
+            "valueRef": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "eve_f24519168e",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Il primo segno",
+        "kind": "storico",
+        "day": -3,
+        "description": "Per la prima volta le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere. Orsino Corvonero è tra i primi a notarlo.",
+        "location": "loc_8ba84babbc",
+        "participants": [
+          "npc_31f68987e5",
+          "npc_0d4ecdba53"
+        ],
+        "requires": [
+          "eve_880eabfe22"
+        ],
+        "requiresKnowledge": [],
+        "happened": true,
+        "effects": []
+      }
+    },
+    {
+      "id": "fac_2350e7496e",
+      "type": "faction",
+      "deleted": false,
+      "data": {
+        "name": "Compagnia dei Mercanti di Sale",
+        "stance": "neutrale",
+        "standing": 0,
+        "description": "La Compagnia dei Mercanti di Sale controlla i commerci tra Monteluce e Campolungo. Cerca soprattutto di non perdere denaro, chiunque vinca.",
+        "goals": [
+          "proteggere le rotte commerciali",
+          "evitare di schierarsi apertamente"
+        ],
+        "resources": [
+          "denaro e crediti",
+          "carovane e guardie private"
+        ],
+        "leader": "npc_f12437f654",
+        "headquarters": "loc_0398a43576",
+        "territories": [
+          "loc_0398a43576"
+        ],
+        "relations": [
+          {
+            "faction": "fac_3732e24e9e",
+            "kind": "neutrale"
+          },
+          {
+            "faction": "fac_25155e9465",
+            "kind": "rivale"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fac_25155e9465",
+      "type": "faction",
+      "deleted": false,
+      "data": {
+        "name": "Culto della Fiamma Pallida",
+        "stance": "ostile",
+        "standing": -2,
+        "description": "Il Culto della Fiamma Pallida agisce nell'ombra: nessuno ne conosce i membri e la sua esistenza è negata dai notabili.",
+        "goals": [
+          "portare a termine il Rito della Luna Cieca nel giorno stabilito",
+          "eliminare o corrompere chiunque indaghi"
+        ],
+        "resources": [
+          "adepti fanatici",
+          "una rete di informatori tra i fedeli",
+          "la fiducia pubblica nel proprio ufficio"
+        ],
+        "leader": "npc_b9a28a3b57",
+        "headquarters": "loc_97e23aff6d",
+        "territories": [
+          "loc_f709eb3290",
+          "loc_97e23aff6d"
+        ],
+        "relations": [
+          {
+            "faction": "fac_3732e24e9e",
+            "kind": "nemica"
+          },
+          {
+            "faction": "fac_2350e7496e",
+            "kind": "rivale"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fac_3732e24e9e",
+      "type": "faction",
+      "deleted": false,
+      "data": {
+        "name": "Ordine della Lanterna Vigile",
+        "stance": "alleata",
+        "standing": 1,
+        "description": "L'Ordine della Lanterna Vigile difende l'ordine in Monteluce e nella regione: ha poche risorse ma gode della fiducia della gente comune.",
+        "goals": [
+          "mantenere la pace in Monteluce",
+          "scoprire la causa dei recenti segnali inquietanti"
+        ],
+        "resources": [
+          "pattuglie e informatori locali",
+          "accesso agli edifici pubblici"
+        ],
+        "leader": "npc_0d4ecdba53",
+        "headquarters": "loc_0398a43576",
+        "territories": [
+          "loc_0398a43576",
+          "loc_8ba84babbc"
+        ],
+        "relations": [
+          {
+            "faction": "fac_2350e7496e",
+            "kind": "neutrale"
+          },
+          {
+            "faction": "fac_25155e9465",
+            "kind": "nemica"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ite_4baaca3670",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Diario scomparso",
+        "kind": "documento",
+        "description": "Un diario annerito dall'umidità, con una mappa del passaggio verso il Santuario Sommerso e le istruzioni del Rito della Luna Cieca.",
+        "value": "prova documentale",
+        "origin": "loc_f709eb3290",
+        "holder": null
+      }
+    },
+    {
+      "id": "ite_6ac698ee6e",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Calice di Cenere",
+        "kind": "magico",
+        "description": "Il Calice di Cenere è il fulcro del Rito della Luna Cieca. Il suo vero potere è noto solo a chi ha studiato la Cripta dei Penitenti.",
+        "value": "inestimabile",
+        "origin": "loc_97e23aff6d",
+        "holder": "npc_b9a28a3b57"
+      }
+    },
+    {
+      "id": "ite_caf9b14100",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Amuleto del buon affare",
+        "kind": "magico",
+        "description": "Un amuleto di bronzo offerto come segno di gratitudine: garantisce un piccolo vantaggio nelle trattative, a discrezione del DM.",
+        "value": "50 mo",
+        "origin": "que_cb8ef1e2d8",
+        "holder": null
+      }
+    },
+    {
+      "id": "ite_f6ae00537b",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Registro dei lavori",
+        "kind": "documento",
+        "description": "Un registro che elenca i finanziamenti ricevuti dalla Cripta dei Penitenti, firmato con una sigla che corrisponde a Ignazio Bosconero.",
+        "value": "prova documentale",
+        "origin": "loc_4844f9853b",
+        "holder": null
+      }
+    },
+    {
+      "id": "loc_0398a43576",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Monteluce",
+        "kind": "città",
+        "parent": "loc_f832ada309",
+        "description": "Monteluce è il centro principale della regione: mura basse, un mercato affollato e una piazza dove si discute tutto ad alta voce.",
+        "history": "Fondata lungo un guado, è cresciuta commerciando con ogni viandante.",
+        "culture": "Sede dell'Ordine della Lanterna Vigile e della Compagnia dei Mercanti di Sale.",
+        "economy": "Mercato settimanale, botteghe artigiane, locande.",
+        "politics": "L'Ordine della Lanterna Vigile e la Compagnia dei Mercanti di Sale si guardano con sospetto, ma nessuna delle due vuole rompere la tregua.",
+        "resources": [
+          "artigiani",
+          "locande",
+          "mercato"
+        ],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_8ba84babbc",
+            "via": "strada battuta",
+            "days": 2
+          },
+          {
+            "to": "loc_e86b36dcbe",
+            "via": "sentiero tra i campi",
+            "days": 1
+          },
+          {
+            "to": "loc_4844f9853b",
+            "via": "una via del centro",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_4844f9853b",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Archivio Civico di Monteluce",
+        "kind": "edificio",
+        "parent": "loc_0398a43576",
+        "description": "Un edificio basso di pietra, con scaffali carichi di registri e un odore di carta umida. Si accede su richiesta e con la supervisione di un archivista.",
+        "history": "Conserva i documenti ufficiali degli ultimi duecento anni.",
+        "politics": "Gestito dal consiglio cittadino.",
+        "resources": [
+          "registri",
+          "mappe"
+        ],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_8ba84babbc",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Campolungo",
+        "kind": "villaggio",
+        "parent": "loc_f832ada309",
+        "description": "Campolungo è un piccolo villaggio di pastori e contadini, dove ognuno conosce i segreti di tutti gli altri ma finge di non sapere nulla.",
+        "history": "È stato il primo luogo in cui si è manifestato il fenomeno: le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere.",
+        "culture": "Tradizioni rurali e una forte diffidenza verso i forestieri.",
+        "economy": "Pastorizia e piccoli raccolti.",
+        "politics": "Governato da un consiglio di anziani.",
+        "resources": [
+          "lana",
+          "formaggio"
+        ],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_0398a43576",
+            "via": "strada battuta",
+            "days": 2
+          },
+          {
+            "to": "loc_e86b36dcbe",
+            "via": "mulattiera",
+            "days": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_97e23aff6d",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Santuario Sommerso",
+        "kind": "dungeon",
+        "parent": "loc_f832ada309",
+        "description": "Il Santuario Sommerso non compare su alcuna mappa. Vi si accede soltanto conoscendone il passaggio.",
+        "history": "Qui Ignazio Bosconero prepara il Rito della Luna Cieca.",
+        "resources": [],
+        "legends": [],
+        "access": "segreto",
+        "unlockedBy": "clu_eadab61618",
+        "connections": [
+          {
+            "to": "loc_f709eb3290",
+            "via": "passaggio nascosto",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_e86b36dcbe",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Brughiera Grigia",
+        "kind": "natura",
+        "parent": "loc_f832ada309",
+        "description": "La Brughiera Grigia separa i centri abitati dalle rovine. Il percorso è insidioso e di notte è meglio non attraversarlo.",
+        "politics": "Terra di nessuno: né la guardia né i mercanti la pattugliano.",
+        "resources": [
+          "selvaggina",
+          "erbe medicinali"
+        ],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_0398a43576",
+            "via": "sentiero",
+            "days": 1
+          },
+          {
+            "to": "loc_8ba84babbc",
+            "via": "mulattiera",
+            "days": 1
+          },
+          {
+            "to": "loc_f709eb3290",
+            "via": "vecchia strada lastricata",
+            "days": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_f709eb3290",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Cripta dei Penitenti",
+        "kind": "dungeon",
+        "parent": "loc_f832ada309",
+        "description": "La Cripta dei Penitenti sorge in un luogo isolato oltre la Brughiera Grigia: da anni nessuno si avvicina volentieri.",
+        "history": "Qui è avvenuto la scomparsa di dodici pellegrini diretti alla cripta.",
+        "resources": [],
+        "legends": [
+          "Si racconta che nelle sue profondità si nasconda ciò che nessuno ha il coraggio di cercare."
+        ],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_e86b36dcbe",
+            "via": "vecchia strada lastricata",
+            "days": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_f832ada309",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Contado dei Tre Fiumi",
+        "kind": "regione",
+        "parent": null,
+        "description": "Il Contado dei Tre Fiumi è una terra di colline e boschi, attraversata da strade antiche. L'oscurità ha una volontà propria e le notti sono sempre più lunghe.",
+        "history": "Pochi mesi fa la scomparsa di dodici pellegrini diretti alla cripta ha lasciato una ferita che la regione non ha ancora chiuso.",
+        "culture": "Tre forze si contendono l'influenza: l'Ordine della Lanterna Vigile, la Compagnia dei Mercanti di Sale e, nell'ombra, il Culto della Fiamma Pallida.",
+        "economy": "Agricoltura, allevamento e il commercio lungo le strade principali.",
+        "politics": "Le istituzioni sono deboli e ognuno cerca protezione dove la trova.",
+        "resources": [
+          "grano",
+          "legname",
+          "pietra da costruzione"
+        ],
+        "legends": [
+          "Si dice che le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere: chi lo ha visto non ama parlarne."
+        ],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "mys_1324ebd3cf",
+      "type": "mystery",
+      "deleted": false,
+      "data": {
+        "name": "Chi c'è dietro il Culto della Fiamma Pallida?",
+        "question": "Chi sta provocando gli eventi che affliggono il Contado dei Tre Fiumi e cosa vuole ottenere?",
+        "solution": "Ignazio Bosconero, Gran Priore, vuole risvegliare un'entità sepolta, nella convinzione che solo così potrà guarire da un male incurabile. Il Rito della Luna Cieca è fissato per il giorno 32.",
+        "culprit": "npc_b9a28a3b57",
+        "clues": [
+          "clu_19dba39b1d",
+          "clu_7420b68fd5",
+          "clu_8e786e16f0",
+          "clu_eadab61618"
+        ],
+        "redHerrings": [
+          "clu_bedb18f5f8"
+        ]
+      }
+    },
+    {
+      "id": "npc_0d4ecdba53",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Elvira Lamabianca",
+        "species": "Mezzelfo",
+        "role": "Capitana della Guardia",
+        "description": "Corporatura solida e sguardo stanco: Elvira Lamabianca ha l'aria di chi dorme poco da settimane.",
+        "personality": "Onesto, burocratico, protettivo con i suoi uomini; diventa ostinato quando si sente criticato.",
+        "motivations": [
+          "proteggere la città e i suoi abitanti",
+          "non ripetere l'errore commesso anni fa"
+        ],
+        "goals": [
+          "trovare chi si cela dietro i segnali inquietanti",
+          "ottenere prove solide prima di accusare un notabile"
+        ],
+        "fears": [
+          "di essere ritenuto responsabile di un nuovo disastro",
+          "di scoprire un traditore nelle proprie file"
+        ],
+        "conflicts": [
+          "Deve rispondere a Ignazio Bosconero, che ha l'autorità per rimuoverlo dall'incarico."
+        ],
+        "status": "vivo",
+        "location": "loc_0398a43576",
+        "schedule": [
+          {
+            "fromDay": -4,
+            "toDay": -2,
+            "location": "loc_8ba84babbc"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Dopo la scomparsa di dodici pellegrini diretti alla cripta la guardia ha trovato un simbolo che non appartiene a nessuna casata nota.",
+            "hidden": false,
+            "source": "loc_f709eb3290",
+            "revealedBy": null
+          },
+          {
+            "fact": "Sospetta che qualcuno ai vertici ostacoli le indagini.",
+            "hidden": true,
+            "source": "eve_f24519168e",
+            "revealedBy": "clu_8e786e16f0"
+          }
+        ],
+        "secrets": [
+          "Ha insabbiato un rapporto per paura di creare panico."
+        ],
+        "lies": [
+          "Afferma di non avere sospetti su nessuno."
+        ],
+        "relationships": [
+          {
+            "npc": "npc_59b9e3054c",
+            "kind": "alleato",
+            "note": "si fida del suo giudizio"
+          },
+          {
+            "npc": "npc_b9a28a3b57",
+            "kind": "rivale",
+            "note": "tensione per l'autorità sulle indagini"
+          }
+        ],
+        "factions": [
+          "fac_3732e24e9e"
+        ],
+        "behaviors": [
+          {
+            "situation": "I PG gli portano prove concrete",
+            "reaction": "Le accetta e mette a disposizione uomini e permessi, ma chiede di agire con discrezione."
+          },
+          {
+            "situation": "I PG accusano apertamente un notabile senza prove",
+            "reaction": "Prende le distanze per non compromettere la guardia e li invita a ritirare l'accusa."
+          },
+          {
+            "situation": "Un suo uomo è in pericolo",
+            "reaction": "Abbandona ogni prudenza e interviene di persona."
+          }
+        ],
+        "dialogues": [
+          "«Non ho abbastanza uomini per tutto questo. Se avete occhi per vedere, usateli.»",
+          "«Portatemi prove, non voci. Le voci le ho già.»"
+        ],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_0e0a8a9954",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Ermanno Valmora",
+        "species": "Dragonide",
+        "role": "cacciatore di taglie",
+        "description": "Ermanno Valmora indossa un mantello consunto e porta una balestra sempre carica. Sorride poco e osserva molto.",
+        "personality": "Orgoglioso, competitivo, ma ha un proprio codice d'onore. Non sopporta chi si prende i meriti altrui.",
+        "motivations": [
+          "guadagnarsi una reputazione che nessuno possa discutere",
+          "ripagare un debito con Corvino dal Ponte"
+        ],
+        "goals": [
+          "incassare la taglia legata alle indagini",
+          "dimostrare di essere migliore dei PG"
+        ],
+        "fears": [
+          "di restare povero e dimenticato",
+          "che il suo nome sia legato a un crimine"
+        ],
+        "conflicts": [
+          "Vuole la ricompensa, ma la sua coscienza lo spinge a non mandare innocenti sul patibolo."
+        ],
+        "status": "vivo",
+        "location": "loc_8ba84babbc",
+        "schedule": [
+          {
+            "fromDay": -41,
+            "toDay": -39,
+            "location": "loc_f709eb3290"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Ha visto Ignazio Bosconero entrare alla Cripta dei Penitenti di notte, ma non ha capito chi fosse davvero.",
+            "hidden": true,
+            "source": "eve_880eabfe22",
+            "revealedBy": "clu_7420b68fd5"
+          }
+        ],
+        "secrets": [
+          "Ha rubato un oggetto da un cadavere, e quell'oggetto ora lo incrimina."
+        ],
+        "lies": [
+          "Sostiene di non essere mai stato nelle rovine."
+        ],
+        "relationships": [
+          {
+            "npc": "npc_f12437f654",
+            "kind": "debito",
+            "note": "deve denaro per l'attrezzatura"
+          },
+          {
+            "npc": "npc_31f68987e5",
+            "kind": "rivale",
+            "note": "il pastore lo accusa di aver rubato"
+          }
+        ],
+        "factions": [
+          "fac_2350e7496e"
+        ],
+        "behaviors": [
+          {
+            "situation": "I PG lo accusano senza prove",
+            "reaction": "Reagisce con rabbia e li sfida a provarlo."
+          },
+          {
+            "situation": "I PG gli offrono denaro o una parte della taglia",
+            "reaction": "Accetta di collaborare finché il compenso è garantito."
+          },
+          {
+            "situation": "Viene scagionato dai PG",
+            "reaction": "Rimane in debito e può diventare un alleato leale."
+          }
+        ],
+        "dialogues": [
+          "«Se avessi voluto farvi del male, non ve ne sareste accorti.»",
+          "«Il mio debito lo pago io. Pensate al vostro.»"
+        ],
+        "combat": [
+          {
+            "note": "Usare un 'Bandit Captain' o equivalente SRD (da scegliere con il DM)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "npc_31f68987e5",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Orsino Corvonero",
+        "species": "Halfling",
+        "role": "pastore",
+        "description": "Orsino Corvonero ha mani callose e un cappello di feltro che non toglie mai, nemmeno in casa.",
+        "personality": "Timido e testardo. Parla solo se si sente al sicuro; mente male e se ne vergogna.",
+        "motivations": [
+          "proteggere la famiglia e il gregge",
+          "ottenere giustizia per un parente scomparso"
+        ],
+        "goals": [
+          "lasciare il villaggio se la situazione peggiora",
+          "farsi credere"
+        ],
+        "fears": [
+          "di essere preso per pazzo",
+          "di diventare il prossimo scomparso"
+        ],
+        "conflicts": [
+          "Vuole parlare ma teme ritorsioni."
+        ],
+        "status": "vivo",
+        "location": "loc_8ba84babbc",
+        "schedule": [],
+        "knowledge": [
+          {
+            "fact": "Ha visto le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere per primo, nel suo pascolo.",
+            "hidden": false,
+            "source": "eve_f24519168e",
+            "revealedBy": null
+          },
+          {
+            "fact": "Ha notato un forestiero ben vestito che visitava la Cripta dei Penitenti di notte.",
+            "hidden": true,
+            "source": "eve_f24519168e",
+            "revealedBy": "clu_7420b68fd5"
+          }
+        ],
+        "secrets": [],
+        "lies": [
+          "Dice di non aver visto nulla se interrogato in pubblico."
+        ],
+        "relationships": [
+          {
+            "npc": "npc_59b9e3054c",
+            "kind": "favore",
+            "note": "l'archivista ha aiutato la sua famiglia"
+          },
+          {
+            "npc": "npc_0e0a8a9954",
+            "kind": "rivale",
+            "note": "lo accusa di un furto"
+          }
+        ],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Viene interrogato in pubblico",
+            "reaction": "Si chiude e nega tutto."
+          },
+          {
+            "situation": "Viene avvicinato con gentilezza e in privato",
+            "reaction": "Racconta quel che ha visto."
+          }
+        ],
+        "dialogues": [
+          "«Io... ho visto qualcosa. Ma non qui, non davanti agli altri.»"
+        ],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_59b9e3054c",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Eldrin Cerchiotorto",
+        "species": "Elfo",
+        "role": "archivista",
+        "description": "Magro e curvo sui libri, Eldrin Cerchiotorto porta sempre un guanto di tela per maneggiare i documenti antichi.",
+        "personality": "Curioso e meticoloso; parla poco ma ricorda tutto. Si emoziona davanti a un documento raro.",
+        "motivations": [
+          "preservare la verità storica della regione",
+          "riscattare la memoria di un mentore caduto in disgrazia"
+        ],
+        "goals": [
+          "catalogare i registri finora ignorati",
+          "provare chi ha manomesso gli atti ufficiali"
+        ],
+        "fears": [
+          "che i documenti vengano distrutti",
+          "di essere scoperto mentre sbircia nei registri riservati"
+        ],
+        "conflicts": [
+          "La lealtà all'archivio contrasta con il desiderio di dire ciò che ha scoperto."
+        ],
+        "status": "vivo",
+        "location": "loc_4844f9853b",
+        "schedule": [],
+        "knowledge": [
+          {
+            "fact": "Ha riconosciuto il simbolo del Culto della Fiamma Pallida in un vecchio registro.",
+            "hidden": false,
+            "source": "clu_19dba39b1d",
+            "revealedBy": null
+          },
+          {
+            "fact": "Sa che qualcuno ha consultato di notte i registri che riguardano la Cripta dei Penitenti.",
+            "hidden": true,
+            "source": "loc_4844f9853b",
+            "revealedBy": "clu_8e786e16f0"
+          }
+        ],
+        "secrets": [
+          "Ha copiato di nascosto alcune pagine dei registri riservati."
+        ],
+        "lies": [],
+        "relationships": [
+          {
+            "npc": "npc_0d4ecdba53",
+            "kind": "alleato",
+            "note": "gli passa informazioni"
+          },
+          {
+            "npc": "npc_31f68987e5",
+            "kind": "favore",
+            "note": "gli deve un favore per una ricerca sulla famiglia"
+          }
+        ],
+        "factions": [
+          "fac_3732e24e9e"
+        ],
+        "behaviors": [
+          {
+            "situation": "I PG chiedono accesso ai registri",
+            "reaction": "Li guida con zelo, ma pretende che nulla venga portato via."
+          },
+          {
+            "situation": "Qualcuno minaccia l'archivio",
+            "reaction": "Nasconde i registri più preziosi e cerca la guardia."
+          }
+        ],
+        "dialogues": [
+          "«Un documento è più affidabile di un testimone, ma entrambi possono mentire.»",
+          "«Se cercate la verità, partite sempre dalle date.»"
+        ],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_b9a28a3b57",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Ignazio Bosconero",
+        "species": "Nano",
+        "role": "Gran Priore",
+        "description": "Ignazio Bosconero è Gran Priore: elegante, cordiale, impeccabile. Nessuno ricorda di averlo mai visto perdere la calma.",
+        "personality": "Carismatico e persuasivo; convinto di agire per un bene superiore. Non alza mai la voce, e non perdona il tradimento.",
+        "motivations": [
+          "Vuole risvegliare un'entità sepolta, nella convinzione che solo così potrà guarire da un male incurabile"
+        ],
+        "goals": [
+          "raccogliere i pellegrini scomparsi come offerte",
+          "mettere a tacere chi indaga tramite la corruzione e la paura",
+          "completare il rito nel santuario nel giorno stabilito"
+        ],
+        "fears": [
+          "di essere smascherato prima di del Rito della Luna Cieca",
+          "di perdere il controllo su ciò che ha messo in moto"
+        ],
+        "conflicts": [
+          "Sa che i suoi metodi sono crudeli e continua a ripetersi che il fine li giustifica."
+        ],
+        "status": "vivo",
+        "location": "loc_0398a43576",
+        "schedule": [
+          {
+            "fromDay": -45,
+            "toDay": -35,
+            "location": "loc_f709eb3290"
+          },
+          {
+            "fromDay": 10,
+            "toDay": 14,
+            "location": "loc_0398a43576"
+          },
+          {
+            "fromDay": 27,
+            "toDay": 37,
+            "location": "loc_97e23aff6d"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Conosce la posizione e il funzionamento del Santuario Sommerso.",
+            "hidden": true,
+            "source": "eve_880eabfe22",
+            "revealedBy": "clu_eadab61618"
+          },
+          {
+            "fact": "Sa chi tra gli influenti è stato corrotto o ricattato.",
+            "hidden": true,
+            "source": "eve_880eabfe22",
+            "revealedBy": "clu_eadab61618"
+          }
+        ],
+        "secrets": [
+          "È il vero capo del Culto della Fiamma Pallida."
+        ],
+        "lies": [
+          "Afferma di sostenere l'inchiesta della guardia."
+        ],
+        "relationships": [
+          {
+            "npc": "npc_f12437f654",
+            "kind": "debito",
+            "note": "tiene per sé una cambiale che lo rende ricattabile"
+          },
+          {
+            "npc": "npc_0d4ecdba53",
+            "kind": "rivale",
+            "note": "finge di sostenerlo mentre ne ostacola le indagini"
+          }
+        ],
+        "factions": [
+          "fac_25155e9465"
+        ],
+        "behaviors": [
+          {
+            "situation": "I PG si avvicinano alla verità",
+            "reaction": "Prima tenta di corromperli, poi di screditarli, infine di eliminarli."
+          },
+          {
+            "situation": "È messo alle strette in pubblico",
+            "reaction": "Sfrutta la sua autorità e accusa i PG di aver mentito."
+          },
+          {
+            "situation": "Si avvicina il Rito della Luna Cieca",
+            "reaction": "Abbandona ogni prudenza e concentra tutte le risorse nel santuario."
+          }
+        ],
+        "dialogues": [
+          "«Capisco la vostra preoccupazione, e la rispetto. Ma credo che stiate seguendo le persone sbagliate.»",
+          "«Tutti vogliono la verità. Pochi sopportano di conoscerla.»"
+        ],
+        "combat": [
+          {
+            "note": "Da costruire a partire da una creatura SRD di GS vicino al livello finale del gruppo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "npc_f12437f654",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Corvino dal Ponte",
+        "species": "Nano",
+        "role": "mercante",
+        "description": "Corvino dal Ponte ha un'aria prospera e sempre affabile, con anelli a ogni dito e un registro dei conti sotto il braccio.",
+        "personality": "Affabile, calcolatore e prudente. Non fa nulla per niente, ma mantiene la parola data.",
+        "motivations": [
+          "proteggere i commerci",
+          "liberarsi di un debito pericoloso"
+        ],
+        "goals": [
+          "recuperare un carico trattenuto",
+          "restare neutrale finché possibile"
+        ],
+        "fears": [
+          "di fallire",
+          "che il suo debito diventi di dominio pubblico"
+        ],
+        "conflicts": [
+          "Il suo debito con Ignazio Bosconero lo costringe a coprire attività che non approva."
+        ],
+        "status": "vivo",
+        "location": "loc_0398a43576",
+        "schedule": [],
+        "knowledge": [
+          {
+            "fact": "Sa che Ignazio Bosconero ha finanziato lavori alla Cripta dei Penitenti.",
+            "hidden": true,
+            "source": "loc_4844f9853b",
+            "revealedBy": "clu_8e786e16f0"
+          }
+        ],
+        "secrets": [
+          "Deve una forte somma a Ignazio Bosconero."
+        ],
+        "lies": [
+          "Nega di avere debiti."
+        ],
+        "relationships": [
+          {
+            "npc": "npc_b9a28a3b57",
+            "kind": "debito",
+            "note": "prestito segreto"
+          },
+          {
+            "npc": "npc_0e0a8a9954",
+            "kind": "favore",
+            "note": "gli ha prestato l'attrezzatura"
+          }
+        ],
+        "factions": [
+          "fac_2350e7496e"
+        ],
+        "behaviors": [
+          {
+            "situation": "I PG offrono un affare vantaggioso",
+            "reaction": "Si mostra disponibile a collaborare."
+          },
+          {
+            "situation": "I PG minacciano di rivelare il debito",
+            "reaction": "Cede informazioni parziali e chiede discrezione."
+          }
+        ],
+        "dialogues": [
+          "«Gli affari sono affari, ma un buon nome vale più dell'oro.»",
+          "«Un favore oggi, un favore domani. Così si costruisce una città.»"
+        ],
+        "combat": []
+      }
+    },
+    {
+      "id": "que_0ce0c48a09",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Il testimone esitante",
+        "kind": "secondaria",
+        "act": 1,
+        "chapter": 1,
+        "premise": "Orsino Corvonero ha visto qualcosa ma ha troppa paura per parlarne in pubblico. Chiede aiuto per ottenere protezione.",
+        "giver": "npc_31f68987e5",
+        "objective": "Convincere Orsino Corvonero a parlare e scortarlo in un luogo sicuro.",
+        "prerequisites": [],
+        "locations": [
+          "loc_8ba84babbc"
+        ],
+        "npcs": [
+          "npc_31f68987e5",
+          "npc_0e0a8a9954"
+        ],
+        "clues": [
+          "clu_7420b68fd5"
+        ],
+        "requiredClues": [],
+        "obstacles": [
+          "Ermanno Valmora sorveglia il villaggio e non vuole testimoni."
+        ],
+        "twists": [
+          "Il testimone ha un parente tra gli scomparsi."
+        ],
+        "outcomes": [
+          {
+            "label": "Il testimone si fida e racconta tutto",
+            "description": "Il gruppo ottiene la testimonianza completa.",
+            "effects": []
+          },
+          {
+            "label": "Il testimone fugge a Monteluce",
+            "description": "Spaventato, cerca rifugio in città; il villaggio resta senza testimone.",
+            "effects": [
+              {
+                "kind": "npcLocation",
+                "target": "npc_31f68987e5",
+                "valueRef": "loc_0398a43576"
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "informazione",
+            "text": "Testimonianza sul forestiero misterioso",
+            "item": null
+          },
+          {
+            "kind": "xp",
+            "text": "Premio in PE secondo la difficoltà",
+            "item": null
+          }
+        ],
+        "consequences": "Orsino Corvonero ricorderà chi lo ha aiutato.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_9fe4787812",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Il Rito della Luna Cieca",
+        "kind": "principale",
+        "act": 3,
+        "chapter": 1,
+        "premise": "Con la mappa in mano, il gruppo sa dove e quando Ignazio Bosconero intende compiere il Rito della Luna Cieca.",
+        "giver": "npc_0d4ecdba53",
+        "objective": "Raggiungere il Santuario Sommerso, fermare Ignazio Bosconero e decidere il destino del Calice di Cenere.",
+        "prerequisites": [
+          {
+            "target": "que_bfdeab26a1",
+            "intentionalCycle": false
+          },
+          {
+            "target": "clu_eadab61618",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_97e23aff6d"
+        ],
+        "npcs": [
+          "npc_b9a28a3b57",
+          "npc_59b9e3054c",
+          "npc_0d4ecdba53"
+        ],
+        "clues": [],
+        "requiredClues": [
+          "clu_8e786e16f0",
+          "clu_eadab61618"
+        ],
+        "obstacles": [
+          "Custodi fanatici.",
+          "Ignazio Bosconero cerca di convincere i PG che sta agendo per il bene di tutti."
+        ],
+        "twists": [
+          "Ignazio Bosconero offre ai PG un accordo allettante."
+        ],
+        "outcomes": [
+          {
+            "label": "Smascherato e consegnato alla giustizia",
+            "description": "Ignazio Bosconero è catturato e processato.",
+            "effects": [
+              {
+                "kind": "npcStatus",
+                "target": "npc_b9a28a3b57",
+                "value": "prigioniero",
+                "valueRef": null
+              },
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "2",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Ucciso nel santuario",
+            "description": "Ignazio Bosconero muore e con lui si spegne il Rito della Luna Cieca.",
+            "effects": [
+              {
+                "kind": "npcStatus",
+                "target": "npc_b9a28a3b57",
+                "value": "morto",
+                "valueRef": null
+              },
+              {
+                "kind": "factionStanding",
+                "target": "fac_25155e9465",
+                "value": "-3",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Accordo con l'antagonista",
+            "description": "I PG accettano l'offerta di Ignazio Bosconero: la regione è salva, ma a quale prezzo?",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_25155e9465",
+                "value": "3",
+                "valueRef": null
+              },
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "-2",
+                "valueRef": null
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oggetto",
+            "text": "Calice di Cenere",
+            "item": "ite_6ac698ee6e"
+          },
+          {
+            "kind": "xp",
+            "text": "Premio in PE secondo la difficoltà",
+            "item": null
+          }
+        ],
+        "consequences": "L'esito determina il finale della campagna e il futuro della regione.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_b1cc1a06c9",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Un nome da ripulire",
+        "kind": "secondaria",
+        "act": 2,
+        "chapter": 2,
+        "premise": "Dopo il ritrovamento del suo oggetto accanto alle vittime, Ermanno Valmora teme di essere accusato e chiede ai PG di dimostrare la sua innocenza.",
+        "giver": "npc_0e0a8a9954",
+        "objective": "Dimostrare che l'oggetto di Ermanno Valmora non lo incolpa e individuare il vero responsabile.",
+        "prerequisites": [
+          {
+            "target": "que_0ce0c48a09",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_4844f9853b",
+          "loc_8ba84babbc"
+        ],
+        "npcs": [
+          "npc_0e0a8a9954",
+          "npc_59b9e3054c"
+        ],
+        "clues": [
+          "clu_8e786e16f0"
+        ],
+        "requiredClues": [
+          "clu_8e786e16f0"
+        ],
+        "obstacles": [
+          "Gli atti ufficiali sono incompleti.",
+          "I testimoni sono stati intimiditi."
+        ],
+        "twists": [
+          "Il registro rivela che il vero finanziatore è molto vicino alla guardia."
+        ],
+        "outcomes": [
+          {
+            "label": "Il rivale è scagionato e diventa un alleato",
+            "description": "Ermanno Valmora sistema il proprio debito e offre aiuto.",
+            "effects": []
+          },
+          {
+            "label": "Il rivale lascia la regione",
+            "description": "Spaventato, rinuncia alla taglia e parte.",
+            "effects": [
+              {
+                "kind": "npcLocation",
+                "target": "npc_0e0a8a9954",
+                "valueRef": "loc_0398a43576"
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "informazione",
+            "text": "Il registro dei finanziamenti",
+            "item": null
+          },
+          {
+            "kind": "favore",
+            "text": "La riconoscenza di Ermanno Valmora",
+            "item": null
+          }
+        ],
+        "consequences": "La falsa pista viene definitivamente smentita.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_bfdeab26a1",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Le profondità della Cripta dei Penitenti",
+        "kind": "principale",
+        "act": 2,
+        "chapter": 3,
+        "premise": "Con le prove raccolte, il Capitano chiede ai PG di esplorare la Cripta dei Penitenti, dove si ritiene sia custodita la prova decisiva.",
+        "giver": "npc_0d4ecdba53",
+        "objective": "Entrare nella Cripta dei Penitenti, superare i suoi pericoli e recuperare il diario.",
+        "prerequisites": [
+          {
+            "target": "que_fe5e725cd7",
+            "intentionalCycle": false
+          },
+          {
+            "target": "clu_7420b68fd5",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_e86b36dcbe",
+          "loc_f709eb3290"
+        ],
+        "npcs": [
+          "npc_59b9e3054c",
+          "npc_0d4ecdba53"
+        ],
+        "clues": [
+          "clu_eadab61618"
+        ],
+        "requiredClues": [
+          "clu_8e786e16f0"
+        ],
+        "obstacles": [
+          "Trappole e custodi nelle profondità.",
+          "Un'imboscata lungo la strada."
+        ],
+        "twists": [
+          "Il diario porta un sigillo che il gruppo ha già visto."
+        ],
+        "outcomes": [
+          {
+            "label": "Il diario è recuperato e i sopravvissuti salvati",
+            "description": "La guardia loda il gruppo.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "1",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Il diario è recuperato, ma i sopravvissuti sono abbandonati",
+            "description": "La reputazione del gruppo ne risente.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "-1",
+                "valueRef": null
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "xp",
+            "text": "Premio in PE secondo la difficoltà",
+            "item": null
+          },
+          {
+            "kind": "oggetto",
+            "text": "Diario scomparso",
+            "item": "ite_4baaca3670"
+          }
+        ],
+        "consequences": "Il gruppo ottiene la mappa verso il Santuario Sommerso.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_cb8ef1e2d8",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Il debito del mercante",
+        "kind": "secondaria",
+        "act": 2,
+        "chapter": 1,
+        "premise": "Corvino dal Ponte ha un carico bloccato lungo la Brughiera Grigia e teme per la sua reputazione. Offre un compenso a chi lo recupera.",
+        "giver": "npc_f12437f654",
+        "objective": "Recuperare il carico e riportarlo a Monteluce senza perdite.",
+        "prerequisites": [
+          {
+            "target": "que_fe5e725cd7",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_0398a43576",
+          "loc_e86b36dcbe"
+        ],
+        "npcs": [
+          "npc_f12437f654",
+          "npc_0e0a8a9954"
+        ],
+        "clues": [],
+        "requiredClues": [],
+        "obstacles": [
+          "Predoni nella zona.",
+          "Il carro è danneggiato."
+        ],
+        "twists": [
+          "Corvino dal Ponte nasconde qualcosa nel carico."
+        ],
+        "outcomes": [
+          {
+            "label": "Il carico è recuperato",
+            "description": "Il mercante salda il debito con i PG.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_2350e7496e",
+                "value": "1",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Il carico è perduto e il mercante si ritiene tradito",
+            "description": "La Compagnia perde fiducia nel gruppo.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_2350e7496e",
+                "value": "-1",
+                "valueRef": null
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oggetto",
+            "text": "Amuleto del buon affare",
+            "item": "ite_caf9b14100"
+          },
+          {
+            "kind": "oro",
+            "text": "150 mo",
+            "item": null
+          }
+        ],
+        "consequences": "La reputazione presso la Compagnia dei Mercanti di Sale cambia.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_fe5e725cd7",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Segni a Campolungo",
+        "kind": "principale",
+        "act": 1,
+        "chapter": 1,
+        "premise": "Elvira Lamabianca ha ricevuto notizie allarmanti: le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere. La guardia non ha uomini da dedicare all'indagine.",
+        "giver": "npc_0d4ecdba53",
+        "objective": "Raccogliere informazioni a Monteluce e a Campolungo e portare al Capitano le prove del simbolo.",
+        "prerequisites": [],
+        "locations": [
+          "loc_0398a43576",
+          "loc_8ba84babbc",
+          "loc_4844f9853b"
+        ],
+        "npcs": [
+          "npc_0d4ecdba53",
+          "npc_59b9e3054c",
+          "npc_31f68987e5",
+          "npc_0e0a8a9954"
+        ],
+        "clues": [
+          "clu_19dba39b1d",
+          "clu_bedb18f5f8"
+        ],
+        "requiredClues": [
+          "clu_19dba39b1d"
+        ],
+        "obstacles": [
+          "La gente del villaggio non vuole parlare con i forestieri.",
+          "Ermanno Valmora ostacola le indagini per interesse personale."
+        ],
+        "twists": [
+          "La falsa pista (oggetto del rivale) sembra molto convincente."
+        ],
+        "outcomes": [
+          {
+            "label": "Il rapporto è consegnato alla guardia",
+            "description": "Il Capitano ottiene i primi indizi ufficiali e apre l'indagine.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "1",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Il gruppo indaga in segreto",
+            "description": "I PG tengono per sé ciò che hanno scoperto; la guardia si sente scavalcata.",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_3732e24e9e",
+                "value": "-1",
+                "valueRef": null
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oro",
+            "text": "100 mo a testa",
+            "item": null
+          },
+          {
+            "kind": "favore",
+            "text": "La fiducia del Capitano",
+            "item": null
+          }
+        ],
+        "consequences": "La guardia decide se fidarsi o meno del gruppo per il resto della campagna.",
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "ses_37d890ee64",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 2: Segni a Campolungo",
+        "number": 2,
+        "act": 1,
+        "chapter": 1,
+        "summary": "Il gruppo prosegue con la missione \"Segni a Campolungo\": Raccogliere informazioni a Monteluce e a Campolungo e portare al Capitano le prove del simbolo.",
+        "quests": [
+          "que_fe5e725cd7"
+        ],
+        "events": [],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_40152304d8",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 7: Le profondità della Cripta dei Penitenti",
+        "number": 7,
+        "act": 2,
+        "chapter": 3,
+        "summary": "Il gruppo affronta la missione \"Le profondità della Cripta dei Penitenti\". Con le prove raccolte, il Capitano chiede ai PG di esplorare la Cripta dei Penitenti, dove si ritiene sia custodita la prova decisiva.",
+        "quests": [
+          "que_bfdeab26a1"
+        ],
+        "events": [
+          "eve_3a4035a7b0"
+        ],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_7636d1a5ed",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 5: Un nome da ripulire",
+        "number": 5,
+        "act": 2,
+        "chapter": 2,
+        "summary": "Il gruppo affronta la missione \"Un nome da ripulire\". Dopo il ritrovamento del suo oggetto accanto alle vittime, Ermanno Valmora teme di essere accusato e chiede ai PG di dimostrare la sua innocenza.",
+        "quests": [
+          "que_b1cc1a06c9"
+        ],
+        "events": [],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_7eb09a7c64",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 6: Un nome da ripulire",
+        "number": 6,
+        "act": 2,
+        "chapter": 2,
+        "summary": "Il gruppo prosegue con la missione \"Un nome da ripulire\": Dimostrare che l'oggetto di Ermanno Valmora non lo incolpa e individuare il vero responsabile.",
+        "quests": [
+          "que_b1cc1a06c9"
+        ],
+        "events": [],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_92530c4cf5",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 1: Segni a Campolungo",
+        "number": 1,
+        "act": 1,
+        "chapter": 1,
+        "summary": "Il gruppo affronta la missione \"Segni a Campolungo\". Elvira Lamabianca ha ricevuto notizie allarmanti: le campane suonano da sole all'alba e l'acqua dei pozzi sa di cenere. La guardia non ha uomini da dedicare all'indagine.",
+        "quests": [
+          "que_fe5e725cd7"
+        ],
+        "events": [
+          "eve_73b4229d30"
+        ],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_9705c1b59c",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 4: Il debito del mercante",
+        "number": 4,
+        "act": 2,
+        "chapter": 1,
+        "summary": "Il gruppo affronta la missione \"Il debito del mercante\". Corvino dal Ponte ha un carico bloccato lungo la Brughiera Grigia e teme per la sua reputazione. Offre un compenso a chi lo recupera.",
+        "quests": [
+          "que_cb8ef1e2d8"
+        ],
+        "events": [
+          "eve_8355d20991"
+        ],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_a4704c6587",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 3: Il testimone esitante",
+        "number": 3,
+        "act": 1,
+        "chapter": 1,
+        "summary": "Il gruppo affronta la missione \"Il testimone esitante\". Orsino Corvonero ha visto qualcosa ma ha troppa paura per parlarne in pubblico. Chiede aiuto per ottenere protezione.",
+        "quests": [
+          "que_0ce0c48a09"
+        ],
+        "events": [],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_dfdfc8f3e6",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sessione 8: Il Rito della Luna Cieca",
+        "number": 8,
+        "act": 3,
+        "chapter": 1,
+        "summary": "Il gruppo affronta la missione \"Il Rito della Luna Cieca\". Con la mappa in mano, il gruppo sa dove e quando Ignazio Bosconero intende compiere il Rito della Luna Cieca.",
+        "quests": [
+          "que_9fe4787812"
+        ],
+        "events": [
+          "eve_9df1d8607f"
+        ],
+        "played": false
+      }
+    }
+  ]
+}

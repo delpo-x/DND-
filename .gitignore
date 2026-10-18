@@ -1,0 +1,7 @@
+storage/
+node_modules/
+*.log
+.env
+test-results.txt
+*.sqlite
+*.sqlite-*

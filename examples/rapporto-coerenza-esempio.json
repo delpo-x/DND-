@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-17T20:15:47.615Z",
+  "summary": {
+    "errore": 0,
+    "rischio": 0,
+    "suggerimento": 0
+  },
+  "issues": [],
+  "reachable": [
+    "eve_f24519168e",
+    "eve_880eabfe22",
+    "loc_4844f9853b",
+    "loc_e86b36dcbe",
+    "loc_8ba84babbc",
+    "loc_f832ada309",
+    "loc_f709eb3290",
+    "loc_0398a43576",
+    "clu_19dba39b1d",
+    "clu_bedb18f5f8",
+    "clu_7420b68fd5",
+    "que_0ce0c48a09",
+    "que_fe5e725cd7",
+    "eve_73b4229d30",
+    "eve_8355d20991",
+    "eve_3a4035a7b0",
+    "clu_8e786e16f0",
+    "clu_eadab61618",
+    "que_cb8ef1e2d8",
+    "que_bfdeab26a1",
+    "que_b1cc1a06c9",
+    "loc_97e23aff6d",
+    "que_9fe4787812",
+    "eve_9df1d8607f"
+  ]
+}

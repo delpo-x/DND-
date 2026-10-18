@@ -1,0 +1,1559 @@
+{
+  "format": "dnd-campaign-studio/campaign",
+  "formatVersion": 1,
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-17T16:26:11.030Z",
+  "checksum": "de48a69af2b4a9b2ae37ece8cc8136261f87bd83594f0ee435dee980862766bc",
+  "campaign": {
+    "id": "camp_506b297368",
+    "archived": false,
+    "title": "La Decima di Salmastra",
+    "setting": "Salmastra, porto di pescatori e salinari su una costa battuta dalle tempeste, sotto il Faro di Sant'Erma.",
+    "tone": "mistero",
+    "danger": "medio",
+    "players": 4,
+    "startLevel": 3,
+    "endLevel": 4,
+    "sessions": 3,
+    "premise": "Il Faro di Sant'Erma è spento da tre notti e due navi si sono fracassate sugli scogli. Fra tre notti arriva la Santa Brezza, nave di pellegrini con quaranta persone a bordo.",
+    "centralConflict": "Ottavia Rendina, capitana del porto, ha stretto sette anni fa un patto con la strega del mare Nonna Salsedine per riavere il figlio annegato Lio. Il prezzo è una nave di anime ogni sette anni: quest'anno tocca alla Santa Brezza.",
+    "worldState": "Bastiano Ferri, guardiano del faro, è scomparso. I contrabbandieri di Ruggero Spina saccheggiano i relitti. In città si sospetta del mercante Corrado Malvezzi.",
+    "currentDay": 1,
+    "seed": "salmastra-manuale",
+    "rulesVersion": "srd-5.2 (2024)"
+  },
+  "entities": [
+    {
+      "id": "clu_0548a6579f",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Tracce di carri",
+        "text": "Casse trascinate prima dell'alba verso le saline.",
+        "foundAtLocation": "loc_b804edc0f9",
+        "foundWithNpc": null,
+        "foundInItem": null,
+        "check": "Sopravvivenza CD 12",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_0848c789bd",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Malvezzi si arricchisce",
+        "text": "Malvezzi compra a poco la merce dei relitti.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_3168cf2d8b",
+        "foundInItem": null,
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": false,
+        "debunkedBy": "clu_2a59984966"
+      }
+    },
+    {
+      "id": "clu_131fdcec74",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La confessione della Spina",
+        "text": "Ottavia ha portato Bastiano giù, sotto il faro, con le sue mani.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_0579b49f7b",
+        "foundInItem": null,
+        "requires": [
+          "que_0bc1e3127d"
+        ],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_2a59984966",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Ricevute di Malvezzi",
+        "text": "Le ricevute sono datate dopo i naufragi e una delle navi era sua.",
+        "foundAtLocation": "loc_8508ebc998",
+        "foundWithNpc": null,
+        "foundInItem": null,
+        "check": "Indagare CD 12",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_3b335caf80",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La luce verde",
+        "text": "Il faro c'era, ma era verde e più a nord.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_d13441d6d9",
+        "foundInItem": null,
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_66faea741f",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La conchiglia",
+        "text": "Il respiro del ragazzo è là sotto: va aperta col canto della marea, non spezzata.",
+        "foundAtLocation": "loc_b918b74c0b",
+        "foundWithNpc": null,
+        "foundInItem": "ite_0cba23e056",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_839c9b2923",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Il faro sabotato",
+        "text": "Serbatoio dell'olio vuoto ma pulito, lente coperta da una vela catramata.",
+        "foundAtLocation": "loc_b918b74c0b",
+        "foundWithNpc": null,
+        "foundInItem": null,
+        "check": "Indagare CD 10",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_af78097e7c",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Ronde spostate",
+        "text": "Nelle tre notti la ronda del molo è stata spostata con la firma di Ottavia.",
+        "foundAtLocation": "loc_1bace52701",
+        "foundWithNpc": null,
+        "foundInItem": "ite_a4f241f96e",
+        "check": "Indagare CD 13",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_b9fcaac6bf",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Pagamenti a O.R.",
+        "text": "Pagamenti a O.R. e un ordine con il sigillo della Capitaneria.",
+        "foundAtLocation": "loc_df83b4cca5",
+        "foundWithNpc": null,
+        "foundInItem": "ite_9db1532c39",
+        "check": "Persuasione CD 15 o Scassinare CD 13",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_d0ed38f0d5",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La mappa con la X",
+        "text": "Una X sotto il promontorio di Sant'Erma, accessibile via mare o dalla cantina del faro.",
+        "foundAtLocation": "loc_df83b4cca5",
+        "foundWithNpc": null,
+        "foundInItem": null,
+        "requires": [],
+        "mystery": null,
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_de9f58fa97",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Il ragazzo senza riflesso",
+        "text": "Lio non ha riflesso nell'acqua salata e tossisce acqua di mare.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_2ed57cc08d",
+        "foundInItem": null,
+        "check": "Percezione CD 14",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_eebebf622c",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "La filastrocca della decima",
+        "text": "Ogni sette anni il mare chiede una nave; sette anni fa un ragazzo tornò dal mare.",
+        "foundAtLocation": null,
+        "foundWithNpc": "npc_ac0d02c0f9",
+        "foundInItem": null,
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "clu_f1d0ea374d",
+      "type": "clue",
+      "deleted": false,
+      "data": {
+        "name": "Gli otri di Ottavia",
+        "text": "Ottavia è venuta al tramonto con due otri di olio; non sono mai arrivati.",
+        "foundAtLocation": "loc_b918b74c0b",
+        "foundWithNpc": null,
+        "foundInItem": "ite_0cba23e056",
+        "requires": [],
+        "mystery": "mys_f6b01ab4e0",
+        "truthful": true,
+        "debunkedBy": null
+      }
+    },
+    {
+      "id": "eve_134d7807c6",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Secondo naufragio",
+        "kind": "previsto",
+        "day": 1,
+        "description": "All'alba della sessione 1: la nave di Malvezzi si arena, Elsa è nella risacca.",
+        "location": "loc_b804edc0f9",
+        "participants": [
+          "npc_d13441d6d9"
+        ],
+        "requires": [],
+        "requiresKnowledge": [],
+        "happened": false,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_34753b8a5c",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Primo naufragio",
+        "kind": "storico",
+        "day": -2,
+        "description": "Un mercantile si fracassa sugli scogli.",
+        "location": "loc_b804edc0f9",
+        "participants": [],
+        "requires": [],
+        "requiresKnowledge": [],
+        "happened": true,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_35f59510d3",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Rapimento di Bastiano",
+        "kind": "storico",
+        "day": -1,
+        "description": "Bastiano scopre il patto e viene portato nella grotta.",
+        "location": "loc_b918b74c0b",
+        "participants": [
+          "npc_316a200459",
+          "npc_0579b49f7b"
+        ],
+        "requires": [],
+        "requiresKnowledge": [],
+        "happened": true,
+        "effects": [
+          {
+            "kind": "npcStatus",
+            "target": "npc_116ae0d1df",
+            "value": "prigioniero",
+            "valueRef": null
+          },
+          {
+            "kind": "npcLocation",
+            "target": "npc_116ae0d1df",
+            "valueRef": "loc_b136a87f2b"
+          }
+        ]
+      }
+    },
+    {
+      "id": "eve_49c3b9252b",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "Il patto della marea",
+        "kind": "storico",
+        "day": -2555,
+        "description": "Ottavia scende nella grotta e riavrà Lio in cambio di una nave ogni sette anni.",
+        "location": "loc_b136a87f2b",
+        "participants": [
+          "npc_316a200459",
+          "npc_25a261cd71"
+        ],
+        "requires": [],
+        "requiresKnowledge": [],
+        "happened": true,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_a5e0edec1d",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "La luce verde",
+        "kind": "previsto",
+        "day": 1,
+        "description": "I contrabbandieri accendono la lanterna e saccheggiano il relitto (Incontro 1).",
+        "location": "loc_c4dd38df16",
+        "participants": [],
+        "requires": [
+          "eve_134d7807c6"
+        ],
+        "requiresKnowledge": [],
+        "trigger": "Notte della sessione 1",
+        "happened": false,
+        "effects": []
+      }
+    },
+    {
+      "id": "eve_e82c53669f",
+      "type": "event",
+      "deleted": false,
+      "data": {
+        "name": "La notte della decima",
+        "kind": "previsto",
+        "day": 3,
+        "description": "Se il faro è spento, la Santa Brezza naufraga.",
+        "location": "loc_b136a87f2b",
+        "participants": [
+          "npc_25a261cd71"
+        ],
+        "requires": [
+          "eve_a5e0edec1d"
+        ],
+        "requiresKnowledge": [],
+        "trigger": "Mezzanotte della sessione 3",
+        "happened": false,
+        "effects": []
+      }
+    },
+    {
+      "id": "fac_413588a48a",
+      "type": "faction",
+      "deleted": false,
+      "data": {
+        "name": "Capitaneria di Salmastra",
+        "stance": "alleata",
+        "standing": 1,
+        "description": "Autorità del porto. In apparenza alleata del gruppo.",
+        "goals": [],
+        "resources": [],
+        "leader": "npc_316a200459",
+        "headquarters": "loc_1bace52701",
+        "territories": [
+          "loc_9e18dcc2b8"
+        ],
+        "relations": [
+          {
+            "faction": "fac_734f7b9ec7",
+            "kind": "rivale"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fac_734f7b9ec7",
+      "type": "faction",
+      "deleted": false,
+      "data": {
+        "name": "Contrabbandieri della Spina",
+        "stance": "ostile",
+        "standing": -1,
+        "description": "Sciacalli dei relitti al soldo di Ottavia; non sanno della strega.",
+        "goals": [],
+        "resources": [],
+        "leader": "npc_0579b49f7b",
+        "headquarters": "loc_df83b4cca5",
+        "territories": [
+          "loc_67b10495f5",
+          "loc_c4dd38df16"
+        ],
+        "relations": [
+          {
+            "faction": "fac_413588a48a",
+            "kind": "rivale"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ite_0cba23e056",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Diario di Bastiano",
+        "kind": "documento",
+        "description": "Pagine mezze bruciate nella stufa del faro.",
+        "origin": "loc_b918b74c0b",
+        "holder": null
+      }
+    },
+    {
+      "id": "ite_2aacb057a8",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "2 pozioni di guarigione",
+        "kind": "consumabile",
+        "origin": "loc_b136a87f2b",
+        "holder": null
+      }
+    },
+    {
+      "id": "ite_9db1532c39",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Libro mastro della Spina",
+        "kind": "documento",
+        "origin": "loc_df83b4cca5",
+        "holder": "npc_0579b49f7b"
+      }
+    },
+    {
+      "id": "ite_9dd8c96b74",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Conchiglia a spirale",
+        "kind": "magico",
+        "description": "Contiene l'ultimo respiro di Lio. CA 15, 10 PF. Va aperta (azione, Arcano o Esecuzione CD 13), non distrutta.",
+        "origin": "loc_b136a87f2b",
+        "holder": "npc_25a261cd71"
+      }
+    },
+    {
+      "id": "ite_a4f241f96e",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Registro delle ronde",
+        "kind": "documento",
+        "origin": "loc_1bace52701",
+        "holder": null
+      }
+    },
+    {
+      "id": "ite_a6ffe4fafe",
+      "type": "item",
+      "deleted": false,
+      "data": {
+        "name": "Lanterna dal vetro verde",
+        "kind": "altro",
+        "description": "La luce falsa dei contrabbandieri. La strega la riconosce come sua.",
+        "origin": "loc_b804edc0f9",
+        "holder": null
+      }
+    },
+    {
+      "id": "loc_1bace52701",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Capitaneria di Salmastra",
+        "kind": "edificio",
+        "parent": "loc_9e18dcc2b8",
+        "description": "Ufficio di Ottavia Rendina: registri del porto, sigillo, ronde del molo.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_3a60b9dcf2",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Costa di Sant'Erma",
+        "kind": "regione",
+        "parent": null,
+        "description": "Costa rocciosa con saline e scogliere, battuta dalle tempeste d'autunno.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_67b10495f5",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Saline Vecchie",
+        "kind": "natura",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Vasche abbandonate e canali di acqua salmastra. Luci fluttuanti di notte.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_9e18dcc2b8",
+            "via": "argini delle vasche",
+            "days": 0
+          },
+          {
+            "to": "loc_df83b4cca5",
+            "via": "passerella su palafitte",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_8508ebc998",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Magazzino Malvezzi",
+        "kind": "edificio",
+        "parent": "loc_9e18dcc2b8",
+        "description": "Deposito del mercante Corrado Malvezzi, pieno di casse ancora incrostate di sale.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_89e43c65f2",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "L'Ancora Storta",
+        "kind": "edificio",
+        "parent": "loc_9e18dcc2b8",
+        "description": "Taverna del porto: voci, vino salato e pescatori.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_9e18dcc2b8",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Salmastra",
+        "kind": "villaggio",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Porto di pescatori e salinari, case basse color ocra, odore di catrame e sale.",
+        "economy": "Pesca, sale, piccolo commercio costiero.",
+        "resources": [],
+        "legends": [
+          "Ogni sette anni il mare chiede una nave."
+        ],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_b804edc0f9",
+            "via": "sentiero della scogliera",
+            "days": 0
+          },
+          {
+            "to": "loc_67b10495f5",
+            "via": "argini delle vasche",
+            "days": 0
+          },
+          {
+            "to": "loc_b918b74c0b",
+            "via": "la Passerella (solo con la bassa marea)",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_b136a87f2b",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Grotta della Marea",
+        "kind": "dungeon",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Caverna mezzo allagata sotto il faro: pozze profonde, un altare di conchiglie e ossa, la conchiglia che canta.",
+        "resources": [],
+        "legends": [],
+        "access": "segreto",
+        "unlockedBy": "clu_d0ed38f0d5",
+        "connections": [
+          {
+            "to": "loc_b918b74c0b",
+            "via": "scala segreta nella roccia",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_b804edc0f9",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Spiaggia dei Relitti",
+        "kind": "natura",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Arco di sabbia nera sotto la scogliera, dove si sono arenate le due navi.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_9e18dcc2b8",
+            "via": "sentiero della scogliera",
+            "days": 0
+          },
+          {
+            "to": "loc_c4dd38df16",
+            "via": "salita sulla roccia",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_b918b74c0b",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Faro di Sant'Erma",
+        "kind": "edificio",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Torre su un promontorio raggiungibile solo con la bassa marea. Serbatoio dell'olio svuotato, lente coperta da una vela catramata.",
+        "history": "In cantina una porta segreta incrostata di sale scende alla Grotta della Marea.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_9e18dcc2b8",
+            "via": "la Passerella",
+            "days": 0
+          },
+          {
+            "to": "loc_b136a87f2b",
+            "via": "scala segreta nella roccia",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_c4dd38df16",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Scogliera della Luce Falsa",
+        "kind": "natura",
+        "parent": "loc_3a60b9dcf2",
+        "description": "Picco a nord del faro: da qui una lanterna verde imita il faro e attira le navi sugli scogli.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_b804edc0f9",
+            "via": "salita sulla roccia",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_d874486278",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Casa di Nonna Teodora",
+        "kind": "edificio",
+        "parent": "loc_9e18dcc2b8",
+        "description": "Casupola sul molo vecchio, reti appese e tè d'alghe sul fuoco.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": []
+      }
+    },
+    {
+      "id": "loc_df83b4cca5",
+      "type": "location",
+      "deleted": false,
+      "data": {
+        "name": "Covo dei contrabbandieri",
+        "kind": "edificio",
+        "parent": "loc_67b10495f5",
+        "description": "Vecchio deposito del sale su palafitte, base di Ruggero Spina.",
+        "resources": [],
+        "legends": [],
+        "access": "pubblico",
+        "unlockedBy": null,
+        "connections": [
+          {
+            "to": "loc_67b10495f5",
+            "via": "passerella su palafitte",
+            "days": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "mys_f6b01ab4e0",
+      "type": "mystery",
+      "deleted": false,
+      "data": {
+        "name": "Chi spegne il faro?",
+        "question": "Perché le navi naufragano e chi c'è dietro?",
+        "solution": "Ottavia Rendina ha fatto spegnere il faro e accendere la luce verde per pagare a Nonna Salsedine la decima che tiene in vita Lio.",
+        "culprit": "npc_316a200459",
+        "clues": [
+          "clu_839c9b2923",
+          "clu_3b335caf80",
+          "clu_0548a6579f",
+          "clu_af78097e7c",
+          "clu_b9fcaac6bf",
+          "clu_f1d0ea374d",
+          "clu_eebebf622c",
+          "clu_de9f58fa97",
+          "clu_66faea741f",
+          "clu_131fdcec74"
+        ],
+        "redHerrings": [
+          "clu_0848c789bd"
+        ]
+      }
+    },
+    {
+      "id": "npc_0579b49f7b",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Ruggero Spina",
+        "species": "umano",
+        "role": "Capo dei contrabbandieri",
+        "personality": "Sfrontato, avido, superstizioso.",
+        "motivations": [
+          "Soldi",
+          "Salvare la pelle"
+        ],
+        "goals": [
+          "Vendere i carichi dei relitti"
+        ],
+        "fears": [
+          "La strega del mare"
+        ],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_df83b4cca5",
+        "schedule": [
+          {
+            "fromDay": -1,
+            "toDay": -1,
+            "location": "loc_b918b74c0b"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Ottavia ha portato Bastiano sotto il faro",
+            "hidden": false,
+            "source": "eve_35f59510d3",
+            "revealedBy": "clu_131fdcec74"
+          }
+        ],
+        "secrets": [
+          "Ha visto la strega una volta"
+        ],
+        "lies": [],
+        "relationships": [
+          {
+            "npc": "npc_316a200459",
+            "kind": "debito"
+          }
+        ],
+        "factions": [
+          "fac_734f7b9ec7"
+        ],
+        "behaviors": [
+          {
+            "situation": "Scopre che la Santa Brezza porta pellegrini",
+            "reaction": "Cambia lato e consegna il libro mastro"
+          },
+          {
+            "situation": "Sotto metà PF",
+            "reaction": "Si arrende e tratta"
+          }
+        ],
+        "dialogues": [],
+        "combat": [
+          {
+            "monsterKey": "srd-2024_bandit-captain"
+          }
+        ]
+      }
+    },
+    {
+      "id": "npc_116ae0d1df",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Bastiano Ferri",
+        "species": "umano",
+        "role": "Guardiano del faro",
+        "description": "Sessant'anni, burbero, ex marinaio.",
+        "motivations": [
+          "Dovere verso le navi in mare",
+          "Affetto per Lio"
+        ],
+        "goals": [
+          "Riaccendere il faro",
+          "Salvare Lio"
+        ],
+        "fears": [],
+        "conflicts": [],
+        "status": "prigioniero",
+        "location": "loc_b136a87f2b",
+        "schedule": [],
+        "knowledge": [
+          {
+            "fact": "La conchiglia va aperta col canto della marea, non spezzata",
+            "hidden": false,
+            "source": "loc_b918b74c0b",
+            "revealedBy": "clu_66faea741f"
+          }
+        ],
+        "secrets": [],
+        "lies": [],
+        "relationships": [
+          {
+            "npc": "npc_2ed57cc08d",
+            "kind": "mentore"
+          }
+        ],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Liberato",
+            "reaction": "Spiega come aprire la conchiglia e aiuta col faro"
+          }
+        ],
+        "dialogues": [],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_25a261cd71",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Nonna Salsedine",
+        "species": "strega del mare",
+        "role": "Antagonista",
+        "motivations": [
+          "Fame di anime annegate"
+        ],
+        "goals": [
+          "Le anime della decima"
+        ],
+        "fears": [],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_b136a87f2b",
+        "schedule": [],
+        "knowledge": [],
+        "secrets": [
+          "Il suo potere sul patto vive nella conchiglia"
+        ],
+        "lies": [],
+        "relationships": [],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Sotto metà PF",
+            "reaction": "Offre di rinnovare il patto, poi fugge nell'acqua con la conchiglia"
+          }
+        ],
+        "dialogues": [],
+        "combat": [
+          {
+            "monsterKey": "srd-2024_sea-hag",
+            "note": "con 2 Merrow e 2 Reef Shark (+4 Sahuagin Warrior con 5 PG)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "npc_2ed57cc08d",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Lio Rendina",
+        "species": "umano",
+        "role": "Apprendista del guardiano",
+        "description": "Diciassette anni, timido, pelle che sa di alghe. Non ha riflesso nell'acqua salata.",
+        "personality": "Entusiasta e spaventato.",
+        "motivations": [
+          "Affetto per Bastiano",
+          "Paura di deludere la madre"
+        ],
+        "goals": [
+          "Ritrovare Bastiano"
+        ],
+        "fears": [
+          "La grotta",
+          "Il canto sotto il faro"
+        ],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_b918b74c0b",
+        "schedule": [],
+        "knowledge": [],
+        "secrets": [
+          "È annegato sette anni fa; il suo respiro è nella conchiglia della strega"
+        ],
+        "lies": [],
+        "relationships": [
+          {
+            "npc": "npc_316a200459",
+            "kind": "famiglia",
+            "note": "madre"
+          },
+          {
+            "npc": "npc_116ae0d1df",
+            "kind": "mentore",
+            "note": "gli fa da padre"
+          }
+        ],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Si parla della grotta",
+            "reaction": "Impallidisce e tossisce acqua di mare"
+          }
+        ],
+        "dialogues": [],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_3168cf2d8b",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Corrado Malvezzi",
+        "species": "umano",
+        "role": "Mercante",
+        "personality": "Antipatico, aggressivo a parole, mai violento.",
+        "motivations": [
+          "Guadagnare"
+        ],
+        "goals": [
+          "Recuperare le perdite della nave affondata"
+        ],
+        "fears": [],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_8508ebc998",
+        "schedule": [],
+        "knowledge": [],
+        "secrets": [
+          "Compra merce dei relitti, ma solo dopo i naufragi"
+        ],
+        "lies": [],
+        "relationships": [],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Accusato",
+            "reaction": "Minaccia avvocati e mostra le ricevute"
+          }
+        ],
+        "dialogues": [],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_316a200459",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Ottavia Rendina",
+        "species": "umana",
+        "role": "Capitana del porto",
+        "description": "Sui 45 anni, gentile, stanca, sempre in ordine.",
+        "personality": "Calda e controllata; crolla solo davanti alle prove.",
+        "motivations": [
+          "Salvare Lio a qualunque costo"
+        ],
+        "goals": [
+          "Pagare la decima con la Santa Brezza",
+          "Tenere i PG lontani dalla grotta"
+        ],
+        "fears": [
+          "Perdere di nuovo il figlio"
+        ],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_1bace52701",
+        "schedule": [
+          {
+            "fromDay": -2555,
+            "toDay": -2555,
+            "location": "loc_b136a87f2b"
+          },
+          {
+            "fromDay": -1,
+            "toDay": -1,
+            "location": "loc_b918b74c0b"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Il patto chiede una nave ogni sette anni",
+            "hidden": true,
+            "source": "eve_49c3b9252b",
+            "revealedBy": "clu_eebebf622c"
+          },
+          {
+            "fact": "Bastiano è prigioniero nella grotta",
+            "hidden": true,
+            "source": "eve_35f59510d3",
+            "revealedBy": "clu_131fdcec74"
+          }
+        ],
+        "secrets": [
+          "Ha stretto il patto con Nonna Salsedine sette anni fa",
+          "Ha fatto spegnere il faro e spostare le ronde"
+        ],
+        "lies": [
+          "Le ronde servivano al molo nuovo",
+          "Malvezzi ci guadagna, guardate lui"
+        ],
+        "relationships": [
+          {
+            "npc": "npc_2ed57cc08d",
+            "kind": "famiglia",
+            "note": "figlio"
+          },
+          {
+            "npc": "npc_0579b49f7b",
+            "kind": "debito",
+            "note": "lo paga per i naufragi"
+          },
+          {
+            "npc": "npc_25a261cd71",
+            "kind": "debito",
+            "note": "il patto"
+          }
+        ],
+        "factions": [
+          "fac_413588a48a"
+        ],
+        "behaviors": [
+          {
+            "situation": "Il consiglio dei salinari le impone di assoldare qualcuno",
+            "reaction": "Sceglie i PG, forestieri, per tenerli d'occhio e rallentarli"
+          },
+          {
+            "situation": "Interrogata senza prove",
+            "reaction": "Nega con calma e indica Malvezzi"
+          },
+          {
+            "situation": "Messa davanti al libro mastro o al diario",
+            "reaction": "Confessa piangendo e chiede aiuto per Lio"
+          }
+        ],
+        "dialogues": [
+          "Il consiglio paga cinquanta monete a testa, se riaccendete il faro prima della Santa Brezza.",
+          "L'olio per il faro arriverà fra due giorni: intanto guardate nel magazzino di Malvezzi."
+        ],
+        "combat": [
+          {
+            "monsterKey": "srd-2024_spy",
+            "note": "solo se messa alle strette"
+          }
+        ]
+      }
+    },
+    {
+      "id": "npc_ac0d02c0f9",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Nonna Teodora",
+        "species": "umana",
+        "role": "Pescatrice anziana",
+        "personality": "Parla per filastrocche, memoria lunghissima.",
+        "motivations": [
+          "Che qualcuno ascolti le storie"
+        ],
+        "goals": [
+          "Avvertire la città prima della notte nera"
+        ],
+        "fears": [],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_d874486278",
+        "schedule": [],
+        "knowledge": [
+          {
+            "fact": "Le notti nere di sette e quattordici anni fa",
+            "hidden": false,
+            "source": "loc_9e18dcc2b8",
+            "revealedBy": null
+          }
+        ],
+        "secrets": [],
+        "lies": [],
+        "relationships": [],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Ascoltata con pazienza",
+            "reaction": "Racconta la filastrocca della decima"
+          },
+          {
+            "situation": "Le si parla di Lio",
+            "reaction": "Completa la storia del ragazzo tornato dal mare"
+          }
+        ],
+        "dialogues": [],
+        "combat": []
+      }
+    },
+    {
+      "id": "npc_d13441d6d9",
+      "type": "npc",
+      "deleted": false,
+      "data": {
+        "name": "Elsa Bruma",
+        "species": "umana",
+        "role": "Marinaia sopravvissuta",
+        "motivations": [
+          "Rabbia per l'equipaggio perduto"
+        ],
+        "goals": [
+          "Vendicare l'equipaggio"
+        ],
+        "fears": [],
+        "conflicts": [],
+        "status": "vivo",
+        "location": "loc_89e43c65f2",
+        "schedule": [
+          {
+            "fromDay": 1,
+            "toDay": 1,
+            "location": "loc_b804edc0f9"
+          }
+        ],
+        "knowledge": [
+          {
+            "fact": "Il faro era verde e più a nord",
+            "hidden": false,
+            "source": "eve_134d7807c6",
+            "revealedBy": null
+          }
+        ],
+        "secrets": [],
+        "lies": [],
+        "relationships": [],
+        "factions": [],
+        "behaviors": [
+          {
+            "situation": "Salvata dai PG",
+            "reaction": "Racconta della luce verde e chiede di unirsi alla caccia"
+          }
+        ],
+        "dialogues": [],
+        "combat": []
+      }
+    },
+    {
+      "id": "que_0bc1e3127d",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Sale e segreti",
+        "kind": "principale",
+        "act": 1,
+        "chapter": 2,
+        "premise": "Le tracce portano alle Saline Vecchie.",
+        "giver": "npc_316a200459",
+        "objective": "Trovare il covo della Spina e scoprire chi paga i naufragi.",
+        "prerequisites": [
+          {
+            "target": "que_4b70f06479",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_1bace52701",
+          "loc_67b10495f5",
+          "loc_df83b4cca5",
+          "loc_d874486278"
+        ],
+        "npcs": [
+          "npc_0579b49f7b",
+          "npc_ac0d02c0f9",
+          "npc_2ed57cc08d",
+          "npc_316a200459"
+        ],
+        "clues": [
+          "clu_af78097e7c",
+          "clu_b9fcaac6bf",
+          "clu_eebebf622c",
+          "clu_de9f58fa97",
+          "clu_d0ed38f0d5",
+          "clu_131fdcec74"
+        ],
+        "requiredClues": [
+          "clu_0548a6579f"
+        ],
+        "obstacles": [
+          "Incontro 2: luci nella salina (550 PE)",
+          "Incontro 3: il covo, evitabile (850 PE)"
+        ],
+        "twists": [
+          "Ruggero può cambiare lato",
+          "Ottavia sparisce con Lio al tramonto"
+        ],
+        "outcomes": [
+          {
+            "label": "Ruggero alleato",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_734f7b9ec7",
+                "value": "1",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Covo distrutto",
+            "effects": [
+              {
+                "kind": "nota",
+                "target": null,
+                "value": "Nessuna barca per la sessione 3",
+                "valueRef": null
+              }
+            ]
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oggetto",
+            "text": "Otre d'olio da faro",
+            "item": null
+          }
+        ],
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_4b70f06479",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "Il faro spento",
+        "kind": "principale",
+        "act": 1,
+        "chapter": 1,
+        "premise": "Il faro è spento e il guardiano è scomparso.",
+        "giver": "npc_316a200459",
+        "objective": "Scoprire perché il faro è spento e chi accende la luce verde.",
+        "prerequisites": [],
+        "locations": [
+          "loc_b804edc0f9",
+          "loc_9e18dcc2b8",
+          "loc_b918b74c0b",
+          "loc_c4dd38df16"
+        ],
+        "npcs": [
+          "npc_316a200459",
+          "npc_d13441d6d9",
+          "npc_2ed57cc08d",
+          "npc_3168cf2d8b",
+          "npc_ac0d02c0f9"
+        ],
+        "clues": [
+          "clu_839c9b2923",
+          "clu_3b335caf80",
+          "clu_0548a6579f",
+          "clu_f1d0ea374d",
+          "clu_0848c789bd",
+          "clu_2a59984966"
+        ],
+        "requiredClues": [
+          "clu_839c9b2923"
+        ],
+        "obstacles": [
+          "La Passerella si allaga con l'alta marea",
+          "Incontro 1: predoni dei relitti (550 PE con 4 PG)"
+        ],
+        "twists": [
+          "La lanterna dal vetro verde"
+        ],
+        "outcomes": [
+          {
+            "label": "Predoni sconfitti, prigioniero catturato",
+            "effects": [
+              {
+                "kind": "factionStanding",
+                "target": "fac_734f7b9ec7",
+                "value": "-1",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "Predoni in fuga",
+            "description": "Nessun prigioniero: la pista per le saline resta solo nelle tracce dei carri.",
+            "effects": []
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oggetto",
+            "item": "ite_a6ffe4fafe"
+          },
+          {
+            "kind": "informazione",
+            "text": "La pista porta alle Saline Vecchie",
+            "item": null
+          }
+        ],
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "que_8efa5316e8",
+      "type": "quest",
+      "deleted": false,
+      "data": {
+        "name": "La notte della decima",
+        "kind": "principale",
+        "act": 1,
+        "chapter": 3,
+        "premise": "Arriva la tempesta e con lei la Santa Brezza.",
+        "giver": "npc_2ed57cc08d",
+        "objective": "Riaccendere il faro prima di mezzanotte, liberare Bastiano e affrontare Nonna Salsedine.",
+        "prerequisites": [
+          {
+            "target": "que_0bc1e3127d",
+            "intentionalCycle": false
+          }
+        ],
+        "locations": [
+          "loc_b918b74c0b",
+          "loc_b136a87f2b"
+        ],
+        "npcs": [
+          "npc_25a261cd71",
+          "npc_116ae0d1df",
+          "npc_2ed57cc08d",
+          "npc_316a200459"
+        ],
+        "clues": [
+          "clu_66faea741f"
+        ],
+        "requiredClues": [
+          "clu_d0ed38f0d5"
+        ],
+        "obstacles": [
+          "Tempesta sulla Passerella",
+          "Incontro 4: Nonna Salsedine (1550 PE con 4 PG, alto)"
+        ],
+        "twists": [
+          "La strega offre di rinnovare il patto"
+        ],
+        "outcomes": [
+          {
+            "label": "L'alba buona",
+            "description": "Faro acceso, strega uccisa, conchiglia aperta: Lio vive davvero.",
+            "effects": [
+              {
+                "kind": "npcStatus",
+                "target": "npc_25a261cd71",
+                "value": "morto",
+                "valueRef": null
+              },
+              {
+                "kind": "npcStatus",
+                "target": "npc_116ae0d1df",
+                "value": "vivo",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "La salvezza a metà",
+            "description": "Faro acceso, strega fuggita: il patto resta.",
+            "effects": [
+              {
+                "kind": "npcStatus",
+                "target": "npc_116ae0d1df",
+                "value": "vivo",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "La schiuma",
+            "description": "Conchiglia distrutta: Lio si dissolve.",
+            "effects": [
+              {
+                "kind": "npcStatus",
+                "target": "npc_2ed57cc08d",
+                "value": "morto",
+                "valueRef": null
+              },
+              {
+                "kind": "npcStatus",
+                "target": "npc_25a261cd71",
+                "value": "morto",
+                "valueRef": null
+              }
+            ]
+          },
+          {
+            "label": "La notte nera",
+            "description": "Faro spento: la Santa Brezza naufraga.",
+            "effects": []
+          },
+          {
+            "label": "Il patto rinnovato",
+            "description": "Un PG accetta l'offerta della strega.",
+            "effects": []
+          }
+        ],
+        "rewards": [
+          {
+            "kind": "oro",
+            "text": "50 mo a testa",
+            "item": null
+          },
+          {
+            "kind": "oggetto",
+            "item": "ite_2aacb057a8"
+          },
+          {
+            "kind": "xp",
+            "text": "Passaggio al 4° livello",
+            "item": null
+          }
+        ],
+        "status": "non iniziata"
+      }
+    },
+    {
+      "id": "ses_065dca65a7",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "La notte della decima",
+        "number": 3,
+        "act": 1,
+        "chapter": 3,
+        "summary": "Preparativi (15'), faro nella tempesta (30'), Grotta della Marea (50'), epilogo (25').",
+        "quests": [
+          "que_8efa5316e8"
+        ],
+        "events": [
+          "eve_e82c53669f"
+        ],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_488c579a85",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Sale e segreti",
+        "number": 2,
+        "act": 1,
+        "chapter": 2,
+        "summary": "Registro (15'), saline e fuochi fatui (35'), covo della Spina (45'), la verità su Lio (25').",
+        "quests": [
+          "que_0bc1e3127d"
+        ],
+        "events": [],
+        "played": false
+      }
+    },
+    {
+      "id": "ses_81f87c27fb",
+      "type": "session",
+      "deleted": false,
+      "data": {
+        "name": "Il faro spento",
+        "number": 1,
+        "act": 1,
+        "chapter": 1,
+        "summary": "Relitto all'alba (15'), Salmastra (35'), il faro (35'), la luce verde e i predoni (30').",
+        "quests": [
+          "que_4b70f06479"
+        ],
+        "events": [
+          "eve_134d7807c6",
+          "eve_a5e0edec1d"
+        ],
+        "played": false
+      }
+    }
+  ]
+}
